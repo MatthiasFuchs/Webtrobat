@@ -17,3 +17,4 @@
 # Accept these files #
 ######################
 !.project
+!.classpath
