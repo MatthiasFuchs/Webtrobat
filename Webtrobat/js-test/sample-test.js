@@ -18,6 +18,7 @@
 
 SimpleMathTest = TestCase("sample::add");
 
-SimpleMathTest.prototype.testAdd = function() {
-  assertEquals(3, add(2,1));
-};
+SimpleMathTest.prototype.testAdd = function()
+{
+  assertEquals(3, add(2, 1));
+}; 
