@@ -16,8 +16,10 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function BaseNode(name)
+TypeNodeTest = TestCase("TypeNodeTest");
+
+TypeNodeTest.prototype.testTypeNode = function()
 {
-	this.name = name;
-	this.value = null;
+    var attr = new TypeNode();
+    assertEquals("type", attr.xmlElementName);
 }
