@@ -16,8 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function BaseNode(name)
+function BaseNode(xmlElementName)
 {
-	this.name = name;
+	this.xmlElementName = xmlElementName;
 	this.value = null;
 }
