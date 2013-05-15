@@ -21,7 +21,7 @@ TextNodeTest = TestCase("TextNode");
 TextNodeTest.prototype.testTextNode = function()
 {
 	var attr = new TextNode("my_xml_name");
-	assertEquals("my_xml_name", attr.xmlElementName);
+	assertEquals("my_xml_name", attr.name);
 	assertEquals(null, attr.value);
 	
 	attr.value = "Hello";
