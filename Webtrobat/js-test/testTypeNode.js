@@ -21,5 +21,5 @@ TypeNodeTest = TestCase("TypeNodeTest");
 TypeNodeTest.prototype.testTypeNode = function()
 {
     var attr = new TypeNode();
-    assertEquals("type", attr.xmlElementName);
+    assertEquals("type", attr.name);
 }
