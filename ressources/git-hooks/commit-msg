@@ -1,11 +1,5 @@
 #!/bin/sh
 #
-# Pre commit hook, create a symbol link to it named "commit-msg" in the .git/hooks directory
-# e.g. on linux if you are in this directory execute
-# cd .git/hooks
-# ln -s ../../commit-msg-hook commit-msg
-#
-#
 #//////////////////////////////////////////////////////////////////////////
 #    Copyright Webtrobat Team 2013
 #    This file is part of Webtrobat.
@@ -28,14 +22,15 @@ FILE_NAME="${1}"
 FIRST_LINE=`head -n 1 "${FILE_NAME}"`
 
 echo "${FIRST_LINE}" | \
-    grep -E '^\[(none|(D|U)[0-9]+)\](\[[0-9]+\]|\[Refactor\])? \(([A-Z][A-Z],?)+\)'
+    grep -E '^\[(none|(D|U)?[0-9]+)\](\[[0-9]+\]|\[Refactor\]|\[Testing\])? \(([A-Z][A-Z],? ?)+\) .*'
 RESULT=$?
 if [ "$RESULT" -eq "1" ]; then
     echo "=============================="
     echo "Commit message is in wrong format, supported is:"
-    echo "[TaskNumber] (EG*, GE*)"
-    echo "[TaskNumber][Refactor] (EG*, GE*)"
-    echo "[TaskNumber][IssueNumber] (EG*, GE*)"
+    echo "[TaskNumber] (EG*, GE*) CommitMessage"
+    echo "[TaskNumber][Refactor] (EG*, GE*) CommitMessage"
+    echo "[TaskNumber][IssueNumber] (EG*, GE*) CommitMessage"
+    echo "[TaskNumber][Testing] (EG*, GE*) CommitMessage"
     echo "e.g. '[D10] (MF)'"
     echo "After the first line the commit should also include a descriptive message."
     echo "=============================="
