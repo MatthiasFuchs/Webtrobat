@@ -16,10 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-FileNameValueTest = TestCase("FileNameValueTest");
-
-FileNameValueTest.prototype.testFileNameValue = function()
+function FileNameNode()
 {
-	var attr = new FileNameValue();
-	assertEquals("fileName", attr.xmlElementName);
 }
+
+FileNameNode.prototype = new BaseNode("fileName");

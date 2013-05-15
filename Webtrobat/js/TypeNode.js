@@ -16,7 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function add(a, b)
+function TypeNode()
 {
-  return a + b;
 }
+
+TypeNode.prototype = new BaseNode("type");
