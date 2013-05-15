@@ -765,7 +765,7 @@ a.ui-link-inherit
 {
   background-color: #666;
   background-color: rgba(0,0,0,.4);
-  background-image: url(images/icons-18-white.png);
+  background-image: url(../images/icons-18-white.png);
   background-repeat: no-repeat;
   -webkit-border-radius: 9px;
   border-radius: 9px
@@ -774,7 +774,7 @@ a.ui-link-inherit
 {
   background-color: #fff;
   background-color: rgba(255,255,255,.3);
-  background-image: url(images/icons-18-black.png);
+  background-image: url(../images/icons-18-black.png);
   background-repeat: no-repeat
 }
 .ui-icon-nodisc .ui-icon, .ui-icon-nodisc .ui-icon-searchfield:after, .ui-icon-nodisc .ui-icon-alt .ui-icon, .ui-icon-nodisc .ui-icon-alt .ui-icon-searchfield:after
@@ -881,7 +881,7 @@ a.ui-link-inherit
 {
   .ui-icon-plus, .ui-icon-minus, .ui-icon-delete, .ui-icon-arrow-r, .ui-icon-arrow-l, .ui-icon-arrow-u, .ui-icon-arrow-d, .ui-icon-check, .ui-icon-gear, .ui-icon-refresh, .ui-icon-forward, .ui-icon-back, .ui-icon-grid, .ui-icon-star, .ui-icon-alert, .ui-icon-info, .ui-icon-home, .ui-icon-bars, .ui-icon-edit, .ui-icon-search, .ui-icon-searchfield:after, .ui-icon-checkbox-off, .ui-icon-checkbox-on, .ui-icon-radio-off, .ui-icon-radio-on
   {
-    background-image: url(images/icons-36-white.png);
+    background-image: url(../images/icons-36-white.png);
     -moz-background-size: 864px 18px;
     -o-background-size: 864px 18px;
     -webkit-background-size: 864px 18px;
@@ -889,7 +889,7 @@ a.ui-link-inherit
   }
   .ui-icon-alt .ui-icon
   {
-    background-image: url(images/icons-36-black.png)
+    background-image: url(../images/icons-36-black.png)
   }
   .ui-icon-plus
   {
@@ -1003,7 +1003,7 @@ a.ui-link-inherit
 }
 .ui-icon-loading
 {
-  background: url(images/ajax-loader.gif);
+  background: url(../images/ajax-loader.gif);
   background-size: 46px 46px
 }
 .ui-btn-corner-all
