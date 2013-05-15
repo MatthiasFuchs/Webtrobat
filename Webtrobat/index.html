@@ -8,24 +8,39 @@
     <title></title>
     <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
 
-    <!-- Extra Custom features -->
-    <link rel="stylesheet" href="custom.css">
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="codiqa.ext.css">
 
     <!-- jQuery and jQuery Mobile -->
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile-1.3.1.min.js"></script>
 
-    <!-- Our Custom code -->
-    <script src="js/sample.js"></script>
+    <!-- Extra Codiqa features -->
+    <script src="js/codiqa.ext.js"></script>
 
   </head>
   <body>
-
     <!-- Home -->
     <div data-role="page" id="page1">
+      <div data-theme="a" data-role="header">
+        <a id="button_about" data-role="button" href="#page1" data-icon="info"
+        data-iconpos="left" class="ui-btn-right"> About </a>
+        <h3><img align=left style="width: 21px; height: 21px" src="images/icon-128.png"> Webtrobat </h3>
+      </div>
       <div data-role="content">
-        <h1> Hello World! </h1>
-        <a data-role="button" href="#page1" data-icon="star" data-iconpos="left"> Say Hello! </a>
+        <a id="button_continue" data-role="button" target="_blank" data-transition="flip"
+        href="#page1" data-icon="edit" data-iconpos="left"> Fortsetzen </a>
+        <a id="button_new" data-role="button" href="#page1" data-icon="plus" data-iconpos="left"> Neu </a>
+        <a id="button_programs" data-role="button" href="#page1" data-icon="bars"
+        data-iconpos="left"> Programme </a>
+        <a id="button_forum" data-role="button" href="https://groups.google.com/group/catrobat"
+        data-icon="search" data-iconpos="left"> Forum </a>
+        <a id="button_web" data-role="button" href="http://pocketcode.org" data-icon="home"
+        data-iconpos="left"> Web </a>
+        <a id="button_upload" data-role="button" href="#page1" data-icon="arrow-u"
+        data-iconpos="left"> Hochladen </a>
+        <a id="button_settings" data-role="button" href="#page1" data-icon="gear"
+        data-iconpos="left"> Einstellungen </a>
       </div>
     </div>
   </body>

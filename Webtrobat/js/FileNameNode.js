@@ -16,7 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function add(a, b)
+function FileNameNode()
 {
-  return a + b;
 }
+
+FileNameNode.prototype = new BaseNode("fileName");
