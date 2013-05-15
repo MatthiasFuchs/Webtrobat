@@ -1,0 +1,9 @@
+commit-msg
+----------
+* checks that your commit message has a correct format
+* works with git, git gui
+* does not work with egit (egit sucks, avoid it like the pest ;) )
+
+Install:
+    Create a link to commit-msg, also named commit-msg and move that link
+    to your .git/hooks directory of the git project
