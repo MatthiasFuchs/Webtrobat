@@ -27,9 +27,9 @@ RESULT=$?
 if [ "$RESULT" -eq "1" ]; then
     echo "=============================="
     echo "Commit message is in wrong format, supported is:"
-    echo "[TaskNumber] (EG*, GE*)"
-    echo "[TaskNumber][Refactor] (EG*, GE*)"
-    echo "[TaskNumber][IssueNumber] (EG*, GE*)"
+    echo "[TaskNumber] (EG*, GE*) CommitMessage"
+    echo "[TaskNumber][Refactor] (EG*, GE*) CommitMessage"
+    echo "[TaskNumber][IssueNumber] (EG*, GE*) CommitMessage"
     echo "e.g. '[D10] (MF)'"
     echo "After the first line the commit should also include a descriptive message."
     echo "=============================="
