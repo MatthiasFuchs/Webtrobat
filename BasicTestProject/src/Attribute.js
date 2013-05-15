@@ -18,5 +18,5 @@
 
 function Attribute()
 {
-	this.value = "";
+	this.value = null;
 }
