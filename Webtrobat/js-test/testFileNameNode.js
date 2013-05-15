@@ -21,5 +21,5 @@ FileNameNodeTest = TestCase("FileNameNodeTest");
 FileNameNodeTest.prototype.testFileNameNode = function()
 {
 	var attr = new FileNameNode();
-	assertEquals("fileName", attr.xmlElementName);
+	assertEquals("fileName", attr.name);
 }

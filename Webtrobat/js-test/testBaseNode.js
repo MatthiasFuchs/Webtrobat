@@ -21,7 +21,7 @@ BaseNodeTest = TestCase("BaseNodeTest");
 BaseNodeTest.prototype.testBaseNode = function()
 {
 	var attr = new BaseNode("my_xml_name");
-	assertEquals("my_xml_name", attr.xmlElementName);
+	assertEquals("my_xml_name", attr.name);
 	assertEquals(null, attr.value);
 	
 	attr.value = "Hello";

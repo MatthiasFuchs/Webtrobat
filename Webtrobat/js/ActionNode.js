@@ -16,10 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-NameNodeTest = TestCase("NameNodeTest");
-
-NameNodeTest.prototype.testNameNode = function()
+function ActionNode()
 {
-	var attr = new NameNode();
-	assertEquals("name", attr.name);
 }
+
+ActionNode.prototype = new BaseNode("action");
