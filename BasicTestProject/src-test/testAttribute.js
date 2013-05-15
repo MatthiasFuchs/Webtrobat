@@ -21,6 +21,8 @@ AttributeTest = TestCase("AttributeTest");
 AttributeTest.prototype.testAttribute = function()
 {
 	var attr = new Attribute();
-	assertEquals(true, true);
-	//assertTrue(true);
+	assertEquals("", attr.value);
+	
+	attr.value = "Hello";
+	assertEquals("Hello", attr.value);
 }
