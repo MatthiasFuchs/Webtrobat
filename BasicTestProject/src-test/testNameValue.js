@@ -16,11 +16,10 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-AttributeTest = TestCase("AttributeTest");
+NameValueTest = TestCase("NameValueTest");
 
-AttributeTest.prototype.testAttribute = function()
+NameValueTest.prototype.testNameValue = function()
 {
-	var attr = new Attribute();
-	assertEquals(true, true);
-	//assertTrue(true);
+	var attr = new NameValue();
+	assertEquals("name", attr.xmlElementName);
 }
