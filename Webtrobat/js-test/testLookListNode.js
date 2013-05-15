@@ -16,10 +16,10 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-NameNodeTest = TestCase("NameNodeTest");
+LookListNodeTest = TestCase("LookListNodeTest");
 
-NameNodeTest.prototype.testNameNode = function()
+LookListNodeTest.prototype.testLookListNode = function()
 {
-	var attr = new NameNode();
-	assertEquals("name", attr.name);
+    var attr = new LookListNode();
+    assertEquals("lookList", attr.name);
 }
