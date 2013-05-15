@@ -16,7 +16,13 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function Attribute()
+BaseValueTest = TestCase("BaseValueTest");
+
+BaseValueTest.prototype.testBaseValue = function()
 {
-	this.value = null;
+	var attr = new BaseValue();
+	assertEquals(null, attr.value);
+	
+	attr.value = "Hello";
+	assertEquals("Hello", attr.value);
 }
