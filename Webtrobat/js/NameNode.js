@@ -16,8 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function NameValue()
+function NameNode()
 {
 }
 
-NameValue.prototype = new BaseValue("name");
+NameNode.prototype = new BaseNode("name");
