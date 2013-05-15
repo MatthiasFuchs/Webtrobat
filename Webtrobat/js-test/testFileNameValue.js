@@ -16,9 +16,10 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-SimpleMathTest = TestCase("sample::add");
+FileNameValueTest = TestCase("FileNameValueTest");
 
-SimpleMathTest.prototype.testAdd = function()
+FileNameValueTest.prototype.testFileNameValue = function()
 {
-  assertEquals(3, add(2, 1));
-}; 
+	var attr = new FileNameValue();
+	assertEquals("fileName", attr.xmlElementName);
+}

@@ -16,9 +16,8 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-SimpleMathTest = TestCase("sample::add");
-
-SimpleMathTest.prototype.testAdd = function()
+function FileNameValue()
 {
-  assertEquals(3, add(2, 1));
-}; 
+}
+
+FileNameValue.prototype = new BaseValue("fileName");
