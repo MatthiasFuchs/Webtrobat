@@ -1,11 +1,5 @@
 #!/bin/sh
 #
-# Pre commit hook, create a symbol link to it named "commit-msg" in the .git/hooks directory
-# e.g. on linux if you are in this directory execute
-# cd .git/hooks
-# ln -s ../../commit-msg-hook commit-msg
-#
-#
 #//////////////////////////////////////////////////////////////////////////
 #    Copyright Webtrobat Team 2013
 #    This file is part of Webtrobat.
@@ -28,7 +22,7 @@ FILE_NAME="${1}"
 FIRST_LINE=`head -n 1 "${FILE_NAME}"`
 
 echo "${FIRST_LINE}" | \
-    grep -E '^\[(none|(D|U)[0-9]+)\](\[[0-9]+\]|\[Refactor\])? \(([A-Z][A-Z],?)+\)'
+    grep -E '^\[(none|(D|U)[0-9]+)\](\[[0-9]+\]|\[Refactor\])? \(([A-Z][A-Z],?)+\) .*'
 RESULT=$?
 if [ "$RESULT" -eq "1" ]; then
     echo "=============================="
