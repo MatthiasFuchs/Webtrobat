@@ -22,7 +22,7 @@ FILE_NAME="${1}"
 FIRST_LINE=`head -n 1 "${FILE_NAME}"`
 
 echo "${FIRST_LINE}" | \
-    grep -E '^\[(none|(D|U)[0-9]+)\](\[[0-9]+\]|\[Refactor\]|\[Testing\])? \(([A-Z][A-Z],?)+\) .*'
+    grep -E '^\[(none|(D|U)?[0-9]+)\](\[[0-9]+\]|\[Refactor\]|\[Testing\])? \(([A-Z][A-Z],? ?)+\) .*'
 RESULT=$?
 if [ "$RESULT" -eq "1" ]; then
     echo "=============================="
