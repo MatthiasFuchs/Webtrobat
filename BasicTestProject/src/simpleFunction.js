@@ -8,5 +8,3 @@ myapp.Greeter.prototype.greet = function(name)
 {
     return "Hello " + name + "!";
 };
-
-if ((a > b) && (a < b))
