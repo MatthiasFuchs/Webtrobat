@@ -20,7 +20,8 @@ BaseValueTest = TestCase("BaseValueTest");
 
 BaseValueTest.prototype.testBaseValue = function()
 {
-	var attr = new BaseValue();
+	var attr = new BaseValue("my_xml_name");
+	assertEquals("my_xml_name", attr.xmlElementName);
 	assertEquals(null, attr.value);
 	
 	attr.value = "Hello";
