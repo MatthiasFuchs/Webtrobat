@@ -18,6 +18,19 @@
 
 function ObjectNode()
 {
+	this.displayName = "";
 }
 
 ObjectNode.prototype = new BaseNode("object");
+
+ObjectNode.prototype.getDisplayName = function()
+{
+	return this.displayName;
+}
+
+ObjectNode.prototype.load = function(dom_element)
+{
+	var nameNode = new NameNode();
+	Utils.loadChild(nameNode, dom_element);
+	this.displayName = nameNode.value;
+}
