@@ -27,3 +27,8 @@ Utils.getRootElement = function(xml_string)
 	
 	return doc.getRootElement();
 }
+
+Utils.loadChild = function(node, dom_element)
+{
+	node.load(dom_element.getChildElement(node.name));
+}
