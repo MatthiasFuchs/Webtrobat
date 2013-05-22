@@ -16,34 +16,14 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-LookListNodeTest = TestCase("LookListNodeTest");
-
-LookListNodeTest.prototype.testLookListNode = function()
+function Utils()
 {
-    var attr = new LookListNode();
-    assertEquals("lookList", attr.name);
 }
 
-LookListNodeTest.prototype.testLoad = function()
+Utils.getRootElement = function(xml_string)
 {
-	var xml_string =
-"      <lookList>\
-        <look>\
-          <fileName>file1</fileName>\
-          <name>name1</name>\
-        </look>\
-        <look>\
-          <fileName>file2</fileName>\
-          <name>name2</name>\
-        </look>\
-      </lookList>";
+	var parser = new marknote.Parser();
+	var doc = parser.parse(xml_string);
 	
-	var lookList = new LookListNode();
-	assertEquals(0, lookList.list.length);
-
-	lookList.load(Utils.getRootElement(xml_string));
-	
-	assertEquals(2, lookList.list.length);
-	
-	assertEquals("file2", lookList.list[1].getFileName());
+	return doc.getRootElement();
 }

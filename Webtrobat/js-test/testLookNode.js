@@ -34,11 +34,8 @@ LookNodeTest.prototype.testLoad = function()
           <name>Hintergrund</name>\
         </look>";
 	
-	var parser = new marknote.Parser();
-	var doc = parser.parse(xml_string);
-	
 	var attr = new LookNode();
-	attr.load(doc.getRootElement());
+	attr.load(Utils.getRootElement(xml_string));
 	
 	assertEquals("Hintergrund_FileName", attr.getFileName());
 	assertEquals("Hintergrund", attr.getDisplayName())

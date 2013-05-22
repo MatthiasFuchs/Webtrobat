@@ -35,10 +35,7 @@ function checkChild(child, name_value)
 		 <child><name>two</name></child>\
 </parent>";
 	
-	var parser = new marknote.Parser();
-	var doc = parser.parse(xml_string);
-	
-	var parent_element = doc.getRootElement();
+	var parent_element = Utils.getRootElement(xml_string);
 	assertEquals("parent", parent_element.getName());
 	
 	var children = parent_element.getChildElements();
