@@ -22,4 +22,6 @@ LookNodeTest.prototype.testLookNode = function()
 {
     var attr = new LookNode();
     assertEquals("look", attr.name);
+    assertEquals("", attr.displayName.value);
+    assertEquals("", attr.fileName.value);
 }

@@ -18,6 +18,8 @@
 
 function LookNode()
 {
+	this.displayName = new NameNode();
+	this.fileName = new FileNameNode();
 }
 
 LookNode.prototype = new BaseNode("look");
