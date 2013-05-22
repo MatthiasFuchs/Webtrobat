@@ -19,6 +19,7 @@
 function ObjectNode()
 {
 	this.displayName = "";
+	this.lookList = new LookListNode();
 }
 
 ObjectNode.prototype = new BaseNode("object");
@@ -33,4 +34,11 @@ ObjectNode.prototype.load = function(dom_element)
 	var nameNode = new NameNode();
 	Utils.loadChild(nameNode, dom_element);
 	this.displayName = nameNode.getText();
+	
+	Utils.loadChild(this.lookList, dom_element);
+}
+
+ObjectNode.prototype.getNumberOfLooks = function()
+{
+	return this.lookList.getLength();
 }

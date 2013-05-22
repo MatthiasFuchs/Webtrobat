@@ -23,6 +23,7 @@ ObjectNodeTest.prototype.testObjectNode = function()
     var objectNode = new ObjectNode();
     assertEquals("object", objectNode.name);
     assertEquals("", objectNode.getDisplayName());
+    assertEquals(0, objectNode.getNumberOfLooks());
 }
 
 ObjectNodeTest.prototype.testLoad = function()
@@ -42,5 +43,7 @@ ObjectNodeTest.prototype.testLoad = function()
 	
 	var objectNode = new ObjectNode();
 	objectNode.load(Utils.getRootElement(xml_string));
+	
 	assertEquals("Object1", objectNode.getDisplayName());
+	assertEquals(1, objectNode.getNumberOfLooks());
 }
