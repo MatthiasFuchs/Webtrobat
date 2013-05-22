@@ -32,3 +32,18 @@ Utils.loadChild = function(node, dom_element)
 {
 	node.load(dom_element.getChildElement(node.name));
 }
+
+Utils.loadChildrenList = function(Type, dom_element)
+{
+	var list = [];
+	
+	var children = dom_element.getChildElements((new Type()).name);
+	for (var i = 0; i < children.length; i++)
+	{
+		var lookNode = new Type();
+		lookNode.load(children[i]);
+		list.push(lookNode);
+	}
+	
+	return list;
+}
