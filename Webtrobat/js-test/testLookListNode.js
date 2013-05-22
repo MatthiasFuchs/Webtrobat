@@ -23,3 +23,29 @@ LookListNodeTest.prototype.testLookListNode = function()
     var attr = new LookListNode();
     assertEquals("lookList", attr.name);
 }
+
+LookListNodeTest.prototype.testLoad = function()
+{
+	var xml_string =
+"      <lookList>\
+        <look>\
+          <fileName>file1</fileName>\
+          <name>name1</name>\
+        </look>\
+        <look>\
+          <fileName>file2</fileName>\
+          <name>name2</name>\
+        </look>\
+      </lookList>";
+	
+	var lookList = new LookListNode();
+	assertEquals(0, lookList.list.length);
+
+	var parser = new marknote.Parser();
+	var doc = parser.parse(xml_string);
+	lookList.load(doc.getRootElement());
+	
+	assertEquals(2, lookList.list.length);
+	
+	assertEquals("file2", lookList.list[1].getFileName());
+}
