@@ -22,4 +22,24 @@ LookNodeTest.prototype.testLookNode = function()
 {
     var attr = new LookNode();
     assertEquals("look", attr.name);
+    assertEquals("", attr.getDisplayName());
+    assertEquals("", attr.getFileName());
+}
+
+LookNodeTest.prototype.testLoad = function()
+{
+	var xml_string =
+"        <look>\
+          <fileName>Hintergrund_FileName</fileName>\
+          <name>Hintergrund</name>\
+        </look>";
+	
+	var parser = new marknote.Parser();
+	var doc = parser.parse(xml_string);
+	
+	var attr = new LookNode();
+	attr.load(doc.getRootElement());
+	
+	assertEquals("Hintergrund_FileName", attr.getFileName());
+	assertEquals("Hintergrund", attr.getDisplayName())
 }

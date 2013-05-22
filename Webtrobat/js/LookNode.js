@@ -18,6 +18,24 @@
 
 function LookNode()
 {
+	this.displayName = new NameNode();
+	this.fileName = new FileNameNode();
 }
 
 LookNode.prototype = new BaseNode("look");
+
+LookNode.prototype.getDisplayName = function()
+{
+	return this.displayName.value;
+}
+
+LookNode.prototype.getFileName = function()
+{
+	return this.fileName.value;
+}
+
+LookNode.prototype.load = function(dom_element)
+{
+	this.displayName.load(dom_element.getChildElement(this.displayName.name));
+	this.fileName.load(dom_element.getChildElement(this.fileName.name));
+}
