@@ -25,13 +25,5 @@ LookListNode.prototype = new BaseNode("lookList");
 
 LookListNode.prototype.load = function(dom_element)
 {
-	this.list = [];
-
-	var children = dom_element.getChildElements((new LookNode()).name);
-	for (var i = 0; i < children.length; i++)
-	{
-		var lookNode = new LookNode();
-		lookNode.load(children[i]);
-		this.list.push(lookNode);
-	}
+	this.list = Utils.loadChildrenList(LookNode, dom_element);
 }

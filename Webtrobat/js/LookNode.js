@@ -36,6 +36,6 @@ LookNode.prototype.getFileName = function()
 
 LookNode.prototype.load = function(dom_element)
 {
-	this.displayName.load(dom_element.getChildElement(this.displayName.name));
-	this.fileName.load(dom_element.getChildElement(this.fileName.name));
+	Utils.loadChild(this.displayName, dom_element);
+	Utils.loadChild(this.fileName, dom_element);
 }
