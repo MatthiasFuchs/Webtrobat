@@ -20,4 +20,4 @@ function NameNode()
 {
 }
 
-NameNode.prototype = new BaseNode("name");
+NameNode.prototype = new TextNode("name");

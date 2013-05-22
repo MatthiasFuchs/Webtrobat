@@ -20,4 +20,4 @@ function ValueNode()
 {
 }
 
-ValueNode.prototype = new BaseNode("value");
+ValueNode.prototype = new TextNode("value");

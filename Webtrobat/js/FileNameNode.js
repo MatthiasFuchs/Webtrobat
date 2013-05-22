@@ -20,4 +20,4 @@ function FileNameNode()
 {
 }
 
-FileNameNode.prototype = new BaseNode("fileName");
+FileNameNode.prototype = new TextNode("fileName");
