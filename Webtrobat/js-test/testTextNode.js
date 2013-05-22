@@ -22,7 +22,7 @@ TextNodeTest.prototype.testTextNode = function()
 {
 	var attr = new TextNode("my_xml_name");
 	assertEquals("my_xml_name", attr.name);
-	assertEquals(null, attr.value);
+	assertEquals("", attr.value);
 	
 	attr.value = "Hello";
 	assertEquals("Hello", attr.value)

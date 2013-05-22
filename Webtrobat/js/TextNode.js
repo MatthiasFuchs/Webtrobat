@@ -19,7 +19,7 @@
 function TextNode(name)
 {
 	this.name = name;
-	this.value = null;
+	this.value = "";
 }
 
 TextNode.prototype.load = function(dom_element)
