@@ -20,6 +20,7 @@ function ObjectNode()
 {
 	this.displayName = "";
 	this.lookList = new LookListNode();
+	this.numberOfScripts = 0;
 }
 
 ObjectNode.prototype = new BaseNode("object");
@@ -29,6 +30,14 @@ ObjectNode.prototype.getDisplayName = function()
 	return this.displayName;
 }
 
+
+ObjectNode.prototype.retrieveNumberOfScripts = function(dom_element)
+{
+	var scriptList = dom_element.getChildElement("scriptList");
+	var scripts = scriptList.getChildElements();
+	this.numberOfScripts = scripts.length;
+}
+
 ObjectNode.prototype.load = function(dom_element)
 {
 	var nameNode = new NameNode();
@@ -36,9 +45,16 @@ ObjectNode.prototype.load = function(dom_element)
 	this.displayName = nameNode.getText();
 	
 	Utils.loadChild(this.lookList, dom_element);
+	
+	this.retrieveNumberOfScripts(dom_element);
 }
 
 ObjectNode.prototype.getNumberOfLooks = function()
 {
 	return this.lookList.getLength();
+}
+
+ObjectNode.prototype.getNumberOfScripts = function()
+{
+	return this.numberOfScripts;
 }
