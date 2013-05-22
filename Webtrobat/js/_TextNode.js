@@ -26,3 +26,9 @@ TextNode.prototype.load = function(dom_element)
 {
 	this.value = dom_element.getText();
 }
+
+TextNode.prototype.getText = function()
+{
+	return this.value;
+}
+

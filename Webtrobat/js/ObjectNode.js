@@ -32,5 +32,5 @@ ObjectNode.prototype.load = function(dom_element)
 {
 	var nameNode = new NameNode();
 	Utils.loadChild(nameNode, dom_element);
-	this.displayName = nameNode.value;
+	this.displayName = nameNode.getText();
 }
