@@ -27,3 +27,18 @@ TextNodeTest.prototype.testTextNode = function()
 	attr.value = "Hello";
 	assertEquals("Hello", attr.value)
 }
+
+TextNodeTest.prototype.testLoad = function()
+{
+	var xml_name = "xml_name";
+	var xml_value = "Hello";
+	var xml_string = "<" + xml_name + ">" + xml_value + "</" + xml_name + ">";
+	
+	var parser = new marknote.Parser();
+	var doc = parser.parse(xml_string);
+	
+	var attr = new TextNode("my_xml_name");
+	attr.load(doc.getRootElement());
+	
+	assertEquals(xml_value, attr.value);
+}
