@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="codiqa.ext.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+   
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header">
+        <a id="button_projects_newproject" data-role="button" href="#page1" data-icon="plus"
+        data-iconpos="left" class="ui-btn-right">
+            .
+        </a>
+        <h3>
+            Current Project
+        </h3>
+    </div>
+    <div data-role="content">
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    Project 1
+                </h3>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="button_project1_open" data-role="button" href="#page1" data-icon="arrow-d"
+                        data-iconpos="top">
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="button_project1_delete" data-role="button" href="#page1" data-icon="delete"
+                        data-iconpos="top">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    Project 2
+                </h3>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="button_project2_open" data-role="button" href="#page1" data-icon="arrow-d"
+                        data-iconpos="top">
+                        </a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="button_project2_delete" data-role="button" href="#page1" data-icon="delete"
+                        data-iconpos="top">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
