@@ -30,12 +30,10 @@ TextNodeTest.prototype.testTextNode = function()
 
 TextNodeTest.prototype.testLoad = function()
 {
-	var xml_name = "xml_name";
-	var xml_value = "Hello";
-	var xml_string = "<" + xml_name + ">" + xml_value + "</" + xml_name + ">";
+	var xml_string = "<xml_name>Hello</xml_name>";
 	
-	var attr = new TextNode("my_xml_name");
+	var attr = new TextNode("xml_name");
 	attr.load(Utils.getRootElement(xml_string));
 	
-	assertEquals(xml_value, attr.value);
+	assertEquals("Hello", attr.value);
 }
