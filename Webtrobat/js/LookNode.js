@@ -23,3 +23,13 @@ function LookNode()
 }
 
 LookNode.prototype = new BaseNode("look");
+
+LookNode.prototype.getDisplayName = function()
+{
+	return this.displayName.value;
+}
+
+LookNode.prototype.getFileName = function()
+{
+	return this.fileName.value;
+}
