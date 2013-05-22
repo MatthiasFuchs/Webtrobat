@@ -21,6 +21,7 @@ function ObjectNode()
 	this.displayName = "";
 	this.lookList = new LookListNode();
 	this.numberOfScripts = 0;
+	this.numberOfSounds = 0;
 }
 
 ObjectNode.prototype = new BaseNode("object");
@@ -30,12 +31,11 @@ ObjectNode.prototype.getDisplayName = function()
 	return this.displayName;
 }
 
-
-ObjectNode.prototype.retrieveNumberOfScripts = function(dom_element)
+ObjectNode.prototype.retrieveNumberOfElement = function(dom_element, elementName)
 {
-	var scriptList = dom_element.getChildElement("scriptList");
-	var scripts = scriptList.getChildElements();
-	this.numberOfScripts = scripts.length;
+	var elementList = dom_element.getChildElement(elementName);
+	var elements = elementList.getChildElements();
+	return elements.length;
 }
 
 ObjectNode.prototype.load = function(dom_element)
@@ -46,7 +46,8 @@ ObjectNode.prototype.load = function(dom_element)
 	
 	Utils.loadChild(this.lookList, dom_element);
 	
-	this.retrieveNumberOfScripts(dom_element);
+	this.numberOfScripts = this.retrieveNumberOfElement(dom_element, "scriptList");
+	this.numberOfSounds = this.retrieveNumberOfElement(dom_element, "soundList");
 }
 
 ObjectNode.prototype.getNumberOfLooks = function()
@@ -57,4 +58,9 @@ ObjectNode.prototype.getNumberOfLooks = function()
 ObjectNode.prototype.getNumberOfScripts = function()
 {
 	return this.numberOfScripts;
+}
+
+ObjectNode.prototype.getNumberOfSounds = function()
+{
+	return this.numberOfSounds;
 }

@@ -25,6 +25,7 @@ ObjectNodeTest.prototype.testObjectNode = function()
     assertEquals("", objectNode.getDisplayName());
     assertEquals(0, objectNode.getNumberOfLooks());
     assertEquals(0, objectNode.getNumberOfScripts());
+    assertEquals(0, objectNode.getNumberOfSounds());
 }
 
 ObjectNodeTest.prototype.testLoad = function()
@@ -42,7 +43,11 @@ ObjectNodeTest.prototype.testLoad = function()
 		<startScript/>\
 		<whenScript/>\
       </scriptList>\
-      <soundList/>\
+      <soundList>\
+        <sound/>\
+        <sound/>\
+        <sound/>\
+	  </soundList>\
      </object>";
 	
 	var objectNode = new ObjectNode();
@@ -51,4 +56,5 @@ ObjectNodeTest.prototype.testLoad = function()
 	assertEquals("Object1", objectNode.getDisplayName());
 	assertEquals(1, objectNode.getNumberOfLooks());
 	assertEquals(2, objectNode.getNumberOfScripts());
+	assertEquals(3, objectNode.getNumberOfSounds());
 }
