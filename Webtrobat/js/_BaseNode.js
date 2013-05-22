@@ -19,5 +19,4 @@
 function BaseNode(name)
 {
 	this.name = name;
-	this.value = null;
 }
