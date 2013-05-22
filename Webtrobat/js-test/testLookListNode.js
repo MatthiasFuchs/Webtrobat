@@ -39,11 +39,11 @@ LookListNodeTest.prototype.testLoad = function()
       </lookList>";
 	
 	var lookList = new LookListNode();
-	assertEquals(0, lookList.list.length);
+	assertEquals(0, lookList.getLength());
 
 	lookList.load(Utils.getRootElement(xml_string));
 	
-	assertEquals(2, lookList.list.length);
+	assertEquals(2, lookList.getLength());
 	
 	assertEquals("file2", lookList.list[1].getFileName());
 }

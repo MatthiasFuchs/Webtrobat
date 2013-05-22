@@ -22,4 +22,25 @@ ObjectNodeTest.prototype.testObjectNode = function()
 {
     var attr = new ObjectNode();
     assertEquals("object", attr.name);
+    assertEquals("", attr.getDisplayName());
+}
+
+ObjectNodeTest.prototype.testLoad = function()
+{
+	var xml_string =
+"    <object>\
+      <lookList>\
+        <look>\
+          <fileName>file1</fileName>\
+          <name>look1</name>\
+        </look>\
+      </lookList>\
+      <name>Object1</name>\
+      <scriptList/>\
+      <soundList/>\
+     </object>";
+	
+	var objectNode = new ObjectNode();
+	objectNode.load(Utils.getRootElement(xml_string));
+	assertEquals("Object1", objectNode.getDisplayName());
 }

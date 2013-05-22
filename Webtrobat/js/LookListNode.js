@@ -27,3 +27,8 @@ LookListNode.prototype.load = function(dom_element)
 {
 	this.list = Utils.loadChildrenList(LookNode, dom_element);
 }
+
+LookListNode.prototype.getLength = function()
+{
+	return this.list.length;
+}
