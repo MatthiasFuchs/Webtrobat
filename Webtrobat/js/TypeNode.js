@@ -20,4 +20,4 @@ function TypeNode()
 {
 }
 
-TypeNode.prototype = new BaseNode("type");
+TypeNode.prototype = new TextNode("type");
