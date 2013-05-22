@@ -20,9 +20,9 @@ ObjectNodeTest = TestCase("ObjectNodeTest");
 
 ObjectNodeTest.prototype.testObjectNode = function()
 {
-    var attr = new ObjectNode();
-    assertEquals("object", attr.name);
-    assertEquals("", attr.getDisplayName());
+    var objectNode = new ObjectNode();
+    assertEquals("object", objectNode.name);
+    assertEquals("", objectNode.getDisplayName());
 }
 
 ObjectNodeTest.prototype.testLoad = function()
