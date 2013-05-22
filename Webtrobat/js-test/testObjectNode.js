@@ -20,9 +20,12 @@ ObjectNodeTest = TestCase("ObjectNodeTest");
 
 ObjectNodeTest.prototype.testObjectNode = function()
 {
-    var attr = new ObjectNode();
-    assertEquals("object", attr.name);
-    assertEquals("", attr.getDisplayName());
+    var objectNode = new ObjectNode();
+    assertEquals("object", objectNode.name);
+    assertEquals("", objectNode.getDisplayName());
+    assertEquals(0, objectNode.getNumberOfLooks());
+    assertEquals(0, objectNode.getNumberOfScripts());
+    assertEquals(0, objectNode.getNumberOfSounds());
 }
 
 ObjectNodeTest.prototype.testLoad = function()
@@ -36,11 +39,22 @@ ObjectNodeTest.prototype.testLoad = function()
         </look>\
       </lookList>\
       <name>Object1</name>\
-      <scriptList/>\
-      <soundList/>\
+      <scriptList>\
+		<startScript/>\
+		<whenScript/>\
+      </scriptList>\
+      <soundList>\
+        <sound/>\
+        <sound/>\
+        <sound/>\
+	  </soundList>\
      </object>";
 	
 	var objectNode = new ObjectNode();
 	objectNode.load(Utils.getRootElement(xml_string));
+	
 	assertEquals("Object1", objectNode.getDisplayName());
+	assertEquals(1, objectNode.getNumberOfLooks());
+	assertEquals(2, objectNode.getNumberOfScripts());
+	assertEquals(3, objectNode.getNumberOfSounds());
 }
