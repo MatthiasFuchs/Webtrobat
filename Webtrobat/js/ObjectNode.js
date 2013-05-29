@@ -18,7 +18,7 @@
 
 function ObjectNode()
 {
-    this.displayName = "";
+    this.nameNode = new NameNode();
     this.lookList = new LookListNode();
     this.numberOfScripts = 0;
     this.numberOfSounds = 0;
@@ -28,7 +28,7 @@ ObjectNode.prototype = new BaseNode("object");
 
 ObjectNode.prototype.getDisplayName = function()
 {
-    return this.displayName;
+    return this.nameNode.getText();
 }
 
 ObjectNode.prototype.retrieveNumberOfElement = function(dom_element,
@@ -46,13 +46,7 @@ ObjectNode.prototype.retrieveNumberOfElement = function(dom_element,
 
 ObjectNode.prototype.load = function(dom_element)
 {
-    var nameNode = new NameNode();
-    if (nameNode)
-    {
-        Utils.loadChild(nameNode, dom_element);
-        this.displayName = nameNode.getText();
-    }
-
+    Utils.loadChild(this.nameNode, dom_element);
     Utils.loadChild(this.lookList, dom_element);
 
     this.numberOfScripts = this.retrieveNumberOfElement(dom_element,

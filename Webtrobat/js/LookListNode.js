@@ -18,17 +18,17 @@
 
 function LookListNode()
 {
-	this.list = [];
+    this.list = [];
 }
 
 LookListNode.prototype = new BaseNode("lookList");
 
 LookListNode.prototype.load = function(dom_element)
 {
-	this.list = Utils.loadChildrenList(LookNode, dom_element);
+    this.list = Utils.loadChildrenList(LookNode, dom_element);
 }
 
 LookListNode.prototype.getLength = function()
 {
-	return this.list.length;
+    return this.list.length;
 }
