@@ -18,26 +18,26 @@
 
 function HeaderNode()
 {
-    var applicationBuildName = "";
-    var applicationBuildNumber = "";
-    var applicationName = "";
-    var applicationVersion = "";
-    var catrobatLanguageVersion = "";
-    var dateTimeUpload = "";
-    var description = "";
-    var deviceName = "";
-    var mediaLicense = "";
-    var platform = "";
-    var platformVersion = "";
-    var programLicense = "";
-    var programName = "";
-    var programScreenshotManuallyTaken = "";
-    var remixOf = "";
-    var screenHeight = "";
-    var screenWidth = "";
-    var tags = "";
-    var url = "";
-    var userHandle = "";
+    this.applicationBuildName = "";
+    this.applicationBuildNumber = "";
+    this.applicationName = "";
+    this.applicationVersion = "";
+    this.catrobatLanguageVersion = "";
+    this.dateTimeUpload = "";
+    this.description = "";
+    this.deviceName = "";
+    this.mediaLicense = "";
+    this.platform = "";
+    this.platformVersion = "";
+    this.programLicense = "";
+    this.programName = "";
+    this.programScreenshotManuallyTaken = "";
+    this.remixOf = "";
+    this.screenHeight = "";
+    this.screenWidth = "";
+    this.tags = "";
+    this.url = "";
+    this.userHandle = "";
 }
 
 HeaderNode.prototype = new BaseNode("header");
