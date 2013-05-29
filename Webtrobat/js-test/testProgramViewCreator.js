@@ -168,6 +168,11 @@ ProgramViewCreatorTest.prototype.testCreateBackgroundView = function()
     programNode.load(Utils.getRootElement(xml_string));
     
     var viewCreator = new ProgramViewCreator(programNode);
-    var result = viewCreator.createBackgroundView();
-    assertEquals("<h1>Hintergrund</h1>\n<p>Hintergrund Looks: 2 Scripts: 2 Sounds: 0</p>\n", result);
+    var result = viewCreator.createView();
+    var backgroundView = "<h1>Hintergrund</h1>\n<p>Hintergrund Looks: 2 Scripts: 2 Sounds: 0</p>\n";
+    var objectsView =
+"<h1>Objekete</h1>\n\
+<p>Catroid Looks: 3 Scripts: 2 Sounds: 0</p>\n\
+<p>ko Looks: 0 Scripts: 0 Sounds: 0</p>\n";
+    assertEquals(backgroundView + objectsView, result);
 }
