@@ -27,31 +27,153 @@ ProgramViewCreatorTest.prototype.testProgramViewCreator = function()
 ProgramViewCreatorTest.prototype.testCreateBackgroundView = function()
 {
     var xml_string =
-"  <objectList>\
-    <object>\
-      <lookList>\
-        <look>\
-          <fileName>file1</fileName>\
-          <name>look1</name>\
-        </look>\
-      </lookList>\
-      <name>Object1</name>\
-      <scriptList>\
-        <startScript/>\
-        <whenScript/>\
-      </scriptList>\
-      <soundList>\
-        <sound/>\
-        <sound/>\
-        <sound/>\
-      </soundList>\
-     </object>\
-   </objectList>";
+"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\
+    <program>\
+      <header>\
+        <applicationBuildName></applicationBuildName>\
+        <applicationBuildNumber>0</applicationBuildNumber>\
+        <applicationName>Catroid</applicationName>\
+        <applicationVersion>0.7.0beta-1501-debug</applicationVersion>\
+        <catrobatLanguageVersion>0.6</catrobatLanguageVersion>\
+        <dateTimeUpload></dateTimeUpload>\
+        <description></description>\
+        <deviceName>GT-I9300</deviceName>\
+        <mediaLicense></mediaLicense>\
+        <platform>Android</platform>\
+        <platformVersion>17</platformVersion>\
+        <programLicense></programLicense>\
+        <programName>Mein erstes Projekt</programName>\
+        <programScreenshotManuallyTaken>false</programScreenshotManuallyTaken>\
+        <remixOf></remixOf>\
+        <screenHeight>1280</screenHeight>\
+        <screenWidth>720</screenWidth>\
+        <tags></tags>\
+        <url></url>\
+        <userHandle></userHandle>\
+      </header>\
+      <objectList>\
+        <object>\
+          <lookList>\
+            <look>\
+              <fileName>22BB0986F3B0349F08136AFB037C7F4A_Hintergrund</fileName>\
+              <name>Hintergrund</name>\
+            </look>\
+            <look>\
+              <fileName>8F48181C163AECCD3464CFA5D9AA1F6F_IMG_20130417_111103.jpg</fileName>\
+              <name>IMG_20130417_111103</name>\
+            </look>\
+          </lookList>\
+          <name>Hintergrund</name>\
+          <scriptList>\
+            <startScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look[2]\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+            </startScript>\
+            <whenScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+              <action>Tapped</action>\
+            </whenScript>\
+          </scriptList>\
+          <soundList/>\
+        </object>\
+        <object>\
+          <lookList>\
+            <look>\
+              <fileName>CFD7234CABB050900E7098F070077A1A_Katze normal</fileName>\
+              <name>Katze normal</name>\
+            </look>\
+            <look>\
+              <fileName>8380419464693D8BF38323918FD9AE23_Banzai-Katze</fileName>\
+              <name>Banzai-Katze</name>\
+            </look>\
+            <look>\
+              <fileName>A680E9D62D48B0EC6A092D7A1E35769E_Grinsekatze</fileName>\
+              <name>Grinsekatze</name>\
+            </look>\
+          </lookList>\
+          <name>Catroid</name>\
+          <scriptList>\
+            <startScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+            </startScript>\
+            <whenScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look[2]\"/>\
+                </setLookBrick>\
+                <waitBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <timeToWaitInSeconds>\
+                    <formulaTree>\
+                      <type>NUMBER</type>\
+                      <value>0.5</value>\
+                    </formulaTree>\
+                  </timeToWaitInSeconds>\
+                </waitBrick>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look[3]\"/>\
+                </setLookBrick>\
+                <waitBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <timeToWaitInSeconds>\
+                    <formulaTree>\
+                      <type>NUMBER</type>\
+                      <value>0.5</value>\
+                    </formulaTree>\
+                  </timeToWaitInSeconds>\
+                </waitBrick>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+              <action>Tapped</action>\
+            </whenScript>\
+          </scriptList>\
+          <soundList/>\
+        </object>\
+        <object>\
+          <lookList/>\
+          <name>ko</name>\
+          <scriptList/>\
+          <soundList/>\
+        </object>\
+      </objectList>\
+      <variables>\
+        <objectVariableList>\
+          <entry>\
+            <object reference=\"../../../../objectList/object[3]\"/>\
+            <list/>\
+          </entry>\
+        </objectVariableList>\
+        <programVariableList/>\
+      </variables>\
+    </program>";
     
-    var objectList = new ObjectListNode();
-    objectList.load(Utils.getRootElement(xml_string));
+    var programNode = new ProgramNode();
+    programNode.load(Utils.getRootElement(xml_string));
     
-    var viewCreator = new ProgramViewCreator();
-    var result = viewCreator.createBackgroundView(objectList);
-    assertEquals("<h1>Hintergrund</h1>\n<p>Object1 Looks: 1 Scripts: 2 Sounds: 3</p>\n", result);
+    var viewCreator = new ProgramViewCreator(programNode);
+    var result = viewCreator.createBackgroundView(programNode.getObjectList());
+    assertEquals("<h1>Hintergrund</h1>\n<p>Hintergrund Looks: 2 Scripts: 2 Sounds: 0</p>\n", result);
 }
