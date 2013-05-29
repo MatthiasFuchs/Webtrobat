@@ -25,6 +25,7 @@ function ProgramViewCreator(programObject)
 ProgramViewCreator.prototype.createView = function()
 {
     var html = this.createBackgroundView();
+    html += this.createObjectsView();
     
     return html;
 }
@@ -55,4 +56,21 @@ ProgramViewCreator.prototype.createObjectButton = function(object)
            " Scripts: " + object.getNumberOfScripts() +
            " Sounds: " + object.getNumberOfSounds() +
            "</p>\n";
+}
+
+ProgramViewCreator.prototype.createObjectsView = function()
+{
+    var html = this.createObjectsHeader();
+    var objects = this.objectList.getObjects();
+    for (var i = 1; i < objects.length; i++)
+    {
+        html += this.createObjectButton(objects[i]);
+    }
+    
+    return html;
+}
+
+ProgramViewCreator.prototype.createObjectsHeader = function()
+{
+    return "<h1>Objekete</h1>\n";
 }
