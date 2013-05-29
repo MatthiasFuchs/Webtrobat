@@ -20,20 +20,20 @@ TextNodeTest = TestCase("TextNode");
 
 TextNodeTest.prototype.testTextNode = function()
 {
-	var attr = new TextNode("my_xml_name");
-	assertEquals("my_xml_name", attr.name);
-	assertEquals("", attr.getText());
-	
-	attr.value = "Hello";
-	assertEquals("Hello", attr.getText())
+    var attr = new TextNode("my_xml_name");
+    assertEquals("my_xml_name", attr.name);
+    assertEquals("", attr.getText());
+
+    attr.value = "Hello";
+    assertEquals("Hello", attr.getText())
 }
 
 TextNodeTest.prototype.testLoad = function()
 {
-	var xml_string = "<xml_name>Hello</xml_name>";
-	
-	var attr = new TextNode("xml_name");
-	attr.load(Utils.getRootElement(xml_string));
-	
-	assertEquals("Hello", attr.getText());
+    var xml_string = "<xml_name>Hello</xml_name>";
+
+    var attr = new TextNode("xml_name");
+    attr.load(Utils.getRootElement(xml_string));
+
+    assertEquals("Hello", attr.getText());
 }

@@ -18,24 +18,24 @@
 
 function LookNode()
 {
-	this.displayName = new NameNode();
-	this.fileName = new FileNameNode();
+    this.displayName = new NameNode();
+    this.fileName = new FileNameNode();
 }
 
 LookNode.prototype = new BaseNode("look");
 
 LookNode.prototype.getDisplayName = function()
 {
-	return this.displayName.value;
+    return this.displayName.value;
 }
 
 LookNode.prototype.getFileName = function()
 {
-	return this.fileName.value;
+    return this.fileName.value;
 }
 
 LookNode.prototype.load = function(dom_element)
 {
-	Utils.loadChild(this.displayName, dom_element);
-	Utils.loadChild(this.fileName, dom_element);
+    Utils.loadChild(this.displayName, dom_element);
+    Utils.loadChild(this.fileName, dom_element);
 }

@@ -28,15 +28,15 @@ LookNodeTest.prototype.testLookNode = function()
 
 LookNodeTest.prototype.testLoad = function()
 {
-	var xml_string =
-"        <look>\
+    var xml_string =
+    "        <look>\
           <fileName>Hintergrund_FileName</fileName>\
           <name>Hintergrund</name>\
         </look>";
-	
-	var attr = new LookNode();
-	attr.load(Utils.getRootElement(xml_string));
-	
-	assertEquals("Hintergrund_FileName", attr.getFileName());
-	assertEquals("Hintergrund", attr.getDisplayName())
+
+    var attr = new LookNode();
+    attr.load(Utils.getRootElement(xml_string));
+
+    assertEquals("Hintergrund_FileName", attr.getFileName());
+    assertEquals("Hintergrund", attr.getDisplayName())
 }

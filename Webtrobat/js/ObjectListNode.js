@@ -18,17 +18,17 @@
 
 function ObjectListNode()
 {
-	this.list = [];
+    this.list = [];
 }
 
 ObjectListNode.prototype = new BaseNode("objectList");
 
 ObjectListNode.prototype.load = function(dom_element)
 {
-	this.list = Utils.loadChildrenList(ObjectNode, dom_element);
+    this.list = Utils.loadChildrenList(ObjectNode, dom_element);
 }
 
 ObjectListNode.prototype.getLength = function()
 {
-	return this.list.length;
+    return this.list.length;
 }

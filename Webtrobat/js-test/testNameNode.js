@@ -20,6 +20,6 @@ NameNodeTest = TestCase("NameNodeTest");
 
 NameNodeTest.prototype.testNameNode = function()
 {
-	var attr = new NameNode();
-	assertEquals("name", attr.name);
+    var attr = new NameNode();
+    assertEquals("name", attr.name);
 }
