@@ -30,7 +30,7 @@ ObjectNodeTest.prototype.testObjectNode = function()
 
 ObjectNodeTest.prototype.testLoad = function()
 {
-	var xml_string =
+    var xml_string =
 "    <object>\
       <lookList>\
         <look>\
@@ -40,21 +40,21 @@ ObjectNodeTest.prototype.testLoad = function()
       </lookList>\
       <name>Object1</name>\
       <scriptList>\
-		<startScript/>\
-		<whenScript/>\
+        <startScript/>\
+        <whenScript/>\
       </scriptList>\
       <soundList>\
         <sound/>\
         <sound/>\
         <sound/>\
-	  </soundList>\
+      </soundList>\
      </object>";
-	
-	var objectNode = new ObjectNode();
-	objectNode.load(Utils.getRootElement(xml_string));
-	
-	assertEquals("Object1", objectNode.getDisplayName());
-	assertEquals(1, objectNode.getNumberOfLooks());
-	assertEquals(2, objectNode.getNumberOfScripts());
-	assertEquals(3, objectNode.getNumberOfSounds());
+
+    var objectNode = new ObjectNode();
+    objectNode.load(Utils.getRootElement(xml_string));
+
+    assertEquals("Object1", objectNode.getDisplayName());
+    assertEquals(1, objectNode.getNumberOfLooks());
+    assertEquals(2, objectNode.getNumberOfScripts());
+    assertEquals(3, objectNode.getNumberOfSounds());
 }

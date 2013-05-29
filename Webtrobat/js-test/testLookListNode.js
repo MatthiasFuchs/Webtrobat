@@ -26,7 +26,7 @@ LookListNodeTest.prototype.testLookListNode = function()
 
 LookListNodeTest.prototype.testLoad = function()
 {
-	var xml_string =
+    var xml_string =
 "      <lookList>\
         <look>\
           <fileName>file1</fileName>\
@@ -37,13 +37,13 @@ LookListNodeTest.prototype.testLoad = function()
           <name>name2</name>\
         </look>\
       </lookList>";
-	
-	var lookList = new LookListNode();
-	assertEquals(0, lookList.getLength());
 
-	lookList.load(Utils.getRootElement(xml_string));
-	
-	assertEquals(2, lookList.getLength());
-	
-	assertEquals("file2", lookList.list[1].getFileName());
+    var lookList = new LookListNode();
+    assertEquals(0, lookList.getLength());
+
+    lookList.load(Utils.getRootElement(xml_string));
+
+    assertEquals(2, lookList.getLength());
+
+    assertEquals("file2", lookList.list[1].getFileName());
 }

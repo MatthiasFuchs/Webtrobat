@@ -18,17 +18,16 @@
 
 function TextNode(name)
 {
-	this.name = name;
-	this.value = "";
+    this.name = name;
+    this.value = "";
 }
 
 TextNode.prototype.load = function(dom_element)
 {
-	this.value = dom_element.getText();
+    this.value = dom_element.getText();
 }
 
 TextNode.prototype.getText = function()
 {
-	return this.value;
+    return this.value;
 }
-

@@ -20,6 +20,6 @@ FileNameNodeTest = TestCase("FileNameNodeTest");
 
 FileNameNodeTest.prototype.testFileNameNode = function()
 {
-	var attr = new FileNameNode();
-	assertEquals("fileName", attr.name);
+    var attr = new FileNameNode();
+    assertEquals("fileName", attr.name);
 }

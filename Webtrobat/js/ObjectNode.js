@@ -18,57 +18,60 @@
 
 function ObjectNode()
 {
-	this.displayName = "";
-	this.lookList = new LookListNode();
-	this.numberOfScripts = 0;
-	this.numberOfSounds = 0;
+    this.displayName = "";
+    this.lookList = new LookListNode();
+    this.numberOfScripts = 0;
+    this.numberOfSounds = 0;
 }
 
 ObjectNode.prototype = new BaseNode("object");
 
 ObjectNode.prototype.getDisplayName = function()
 {
-	return this.displayName;
+    return this.displayName;
 }
 
-ObjectNode.prototype.retrieveNumberOfElement = function(dom_element, elementName)
+ObjectNode.prototype.retrieveNumberOfElement = function(dom_element,
+        elementName)
 {
-	var elementList = dom_element.getChildElement(elementName);
-	if (elementList)
-	{
-		var elements = elementList.getChildElements();
-		return elements.length;
-	}
-	
-	return 0;
+    var elementList = dom_element.getChildElement(elementName);
+    if (elementList)
+    {
+        var elements = elementList.getChildElements();
+        return elements.length;
+    }
+
+    return 0;
 }
 
 ObjectNode.prototype.load = function(dom_element)
 {
-	var nameNode = new NameNode();
-	if (nameNode)
-	{
-		Utils.loadChild(nameNode, dom_element);
-		this.displayName = nameNode.getText();
-	}
-	
-	Utils.loadChild(this.lookList, dom_element);
-	
-	this.numberOfScripts = this.retrieveNumberOfElement(dom_element, "scriptList");
-	this.numberOfSounds = this.retrieveNumberOfElement(dom_element, "soundList");
+    var nameNode = new NameNode();
+    if (nameNode)
+    {
+        Utils.loadChild(nameNode, dom_element);
+        this.displayName = nameNode.getText();
+    }
+
+    Utils.loadChild(this.lookList, dom_element);
+
+    this.numberOfScripts = this.retrieveNumberOfElement(dom_element,
+            "scriptList");
+    this.numberOfSounds = this
+            .retrieveNumberOfElement(dom_element, "soundList");
 }
 
 ObjectNode.prototype.getNumberOfLooks = function()
 {
-	return this.lookList.getLength();
+    return this.lookList.getLength();
 }
 
 ObjectNode.prototype.getNumberOfScripts = function()
 {
-	return this.numberOfScripts;
+    return this.numberOfScripts;
 }
 
 ObjectNode.prototype.getNumberOfSounds = function()
 {
-	return this.numberOfSounds;
+    return this.numberOfSounds;
 }

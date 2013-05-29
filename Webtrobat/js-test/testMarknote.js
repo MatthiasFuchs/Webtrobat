@@ -16,31 +16,31 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
- MarknoteTest = TestCase("MarknoteTest");
- 
+MarknoteTest = TestCase("MarknoteTest");
+
 function checkChild(child, name_value)
- {
-	 assertEquals("child", child.getName());
-	 
-	 var name_element = child.getChildElements()[0];
-	 assertEquals("name", name_element.getName());
-	 
-	 assertEquals(name_value, name_element.getText());
- }
- 
- MarknoteTest.prototype.testRead = function()
- {
-	var xml_string =
+{
+    assertEquals("child", child.getName());
+
+    var name_element = child.getChildElements()[0];
+    assertEquals("name", name_element.getName());
+
+    assertEquals(name_value, name_element.getText());
+}
+
+MarknoteTest.prototype.testRead = function()
+{
+    var xml_string =
 "<parent><child><name>one</name></child>\
-		 <child><name>two</name></child>\
+         <child><name>two</name></child>\
 </parent>";
-	
-	var parent_element = Utils.getRootElement(xml_string);
-	assertEquals("parent", parent_element.getName());
-	
-	var children = parent_element.getChildElements();
-	assertEquals(2, children.length);
-	
-	checkChild(children[0], "one");
-	checkChild(children[1], "two");
- }
+
+    var parent_element = Utils.getRootElement(xml_string);
+    assertEquals("parent", parent_element.getName());
+
+    var children = parent_element.getChildElements();
+    assertEquals(2, children.length);
+
+    checkChild(children[0], "one");
+    checkChild(children[1], "two");
+}
