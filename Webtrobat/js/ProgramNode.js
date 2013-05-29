@@ -24,22 +24,18 @@ function ProgramNode()
 
 ProgramNode.prototype = new BaseNode("program");
 
-
-ProgramNode.prototype.retrieveNumberOfElement = function(dom_element,
-        elementName)
-{
-    var elementList = dom_element.getChildElement(elementName);
-    if (elementList)
-    {
-        var elements = elementList.getChildElements();
-        return elements.length;
-    }
-
-    return 0;
-}
-
 ProgramNode.prototype.load = function(dom_element)
 {
     Utils.loadChild(this.header, dom_element);
     Utils.loadChild(this.objectList, dom_element);
+}
+
+ProgramNode.prototype.getObjectList = function()
+{
+    return this.objectList;
+}
+
+ProgramNode.prototype.getHeader = function()
+{
+    return this.header;
 }

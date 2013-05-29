@@ -38,4 +38,5 @@ ObjectListNodeTest.prototype.testLoad = function()
     objectList.load(Utils.getRootElement(xml_string));
     
     assertEquals(3, objectList.getLength());
+    assertEquals(3, objectList.getObjects().length);
 }
