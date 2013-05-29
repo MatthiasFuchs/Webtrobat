@@ -18,111 +18,60 @@
 
 function HeaderNode()
 {
-    var applicationBuildName = "";
-    var applicationBuildNumber = "";
-    var applicationName = "";
-    var applicationVersion = "";
-    var catrobatLanguageVersion = "";
-    var dateTimeUpload = "";
-    var description = "";
-    var deviceName = "";
-    var mediaLicense = "";
-    var platform = "";
-    var platformVersion = "";
-    var programLicense = "";
-    var programName = "";
-    var programScreenshotManuallyTaken = "";
-    var remixOf = "";
-    var screenHeight = "";
-    var screenWidth = "";
-    var tags = "";
-    var url = "";
-    var userHandle = "";
+    this.applicationBuildName = "";
+    this.applicationBuildNumber = "";
+    this.applicationName = "";
+    this.applicationVersion = "";
+    this.catrobatLanguageVersion = "";
+    this.dateTimeUpload = "";
+    this.description = "";
+    this.deviceName = "";
+    this.mediaLicense = "";
+    this.platform = "";
+    this.platformVersion = "";
+    this.programLicense = "";
+    this.programName = "";
+    this.programScreenshotManuallyTaken = "";
+    this.remixOf = "";
+    this.screenHeight = "";
+    this.screenWidth = "";
+    this.tags = "";
+    this.url = "";
+    this.userHandle = "";
 }
 
 HeaderNode.prototype = new BaseNode("header");
 
-HeaderNode.prototype.load = function(dom_element)
+function getChildText(dom_element, name)
 {
     var child = null;
-    
-    child = dom_element.getChildElement("applicationBuildName");
+    child = dom_element.getChildElement(name);
     if (child)
-        this.applicationBuildName = child.getText();
-    
-    child = dom_element.getChildElement("applicationBuildNumber");
-    if (child)
-        this.applicationBuildNumber = child.getText();
-    
-    child = dom_element.getChildElement("applicationName");
-    if (child)
-        this.applicationName = child.getText();
-    
-    child = dom_element.getChildElement("applicationVersion");
-    if (child)
-        this.applicationVersion = child.getText();
-    
-    child = dom_element.getChildElement("catrobatLanguageVersion");
-    if (child)
-        this.catrobatLanguageVersion = child.getText();
-    
-    child = dom_element.getChildElement("dateTimeUpload");
-    if (child)
-        this.dateTimeUpload = child.getText();
-    
-    child = dom_element.getChildElement("description");
-    if (child)
-        this.description = child.getText();
-    
-    child = dom_element.getChildElement("deviceName");
-    if (child)
-        this.deviceName = child.getText();
-    
-    child = dom_element.getChildElement("mediaLicense");
-    if (child)
-        this.mediaLicense = child.getText();
-    
-    child = dom_element.getChildElement("platform");
-    if (child)
-        this.platform = child.getText();
-    
-    child = dom_element.getChildElement("platformVersion");
-    if (child)
-        this.platformVersion = child.getText();
-    
-    child = dom_element.getChildElement("programLicense");
-    if (child)
-        this.programLicense = child.getText();
-    
-    child = dom_element.getChildElement("programName");
-    if (child)
-        this.programName = child.getText();
-    
-    child = dom_element.getChildElement("programScreenshotManuallyTaken");
-    if (child)
-        this.programScreenshotManuallyTaken = child.getText();
-    
-    child = dom_element.getChildElement("remixOf");
-    if (child)
-        this.remixOf = child.getText();
-    
-    child = dom_element.getChildElement("screenHeight");
-    if (child)
-        this.screenHeight = child.getText();
-    
-    child = dom_element.getChildElement("screenWidth");
-    if (child)
-        this.screenWidth = child.getText();
-    
-    child = dom_element.getChildElement("tags");
-    if (child)
-        this.tags = child.getText();
-    
-    child = dom_element.getChildElement("url");
-    if (child)
-        this.url = child.getText();
-    
-    child = dom_element.getChildElement("userHandle");
-    if (child)
-        this.userHandle = child.getText();
+        return child.getText();
+    else
+        return "";
+}
+
+HeaderNode.prototype.load = function(dom_element)
+{
+    this.applicationBuildName = getChildText(dom_element, "applicationBuildName");
+    this.applicationBuildNumber = getChildText(dom_element, "applicationBuildNumber");
+    this.applicationName = getChildText(dom_element, "applicationName");
+    this.applicationVersion = getChildText(dom_element, "applicationVersion");
+    this.catrobatLanguageVersion = getChildText(dom_element, "catrobatLanguageVersion");
+    this.dateTimeUpload = getChildText(dom_element, "dateTimeUpload");
+    this.description = getChildText(dom_element, "description");
+    this.deviceName = getChildText(dom_element, "deviceName");
+    this.mediaLicense = getChildText(dom_element, "mediaLicense");
+    this.platform = getChildText(dom_element, "platform");
+    this.platformVersion = getChildText(dom_element, "platformVersion");
+    this.programLicense = getChildText(dom_element, "programLicense");
+    this.programName = getChildText(dom_element, "programName");
+    this.programScreenshotManuallyTaken = getChildText(dom_element, "programScreenshotManuallyTaken");
+    this.remixOf = getChildText(dom_element, "remixOf");
+    this.screenHeight = getChildText(dom_element, "screenHeight");
+    this.screenWidth = getChildText(dom_element, "screenWidth");
+    this.tags = getChildText(dom_element, "tags");
+    this.url = getChildText(dom_element, "url");
+    this.userHandle = getChildText(dom_element, "userHandle");
 }
