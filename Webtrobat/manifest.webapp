@@ -3,6 +3,7 @@
   "description": "Catrobat IDE for HTML5",
   "launch_path": "/index.html",
   "icons": {
+    "60": "/images/icon-60.png"
     "128": "/images/icon-128.png"
   },
   "developer": {
