@@ -18,12 +18,6 @@
 
 ProgramViewCreatorTest = TestCase("ProgramViewCreatorTest");
 
-ProgramViewCreatorTest.prototype.testProgramViewCreator = function()
-{
-    var objectNode = new ProgramViewCreator();
-    assertNotEquals(null, objectNode);
-}
-
 ProgramViewCreatorTest.prototype.testCreateBackgroundView = function()
 {
     var xml_string =
@@ -174,6 +168,6 @@ ProgramViewCreatorTest.prototype.testCreateBackgroundView = function()
     programNode.load(Utils.getRootElement(xml_string));
     
     var viewCreator = new ProgramViewCreator(programNode);
-    var result = viewCreator.createBackgroundView(programNode.getObjectList());
+    var result = viewCreator.createBackgroundView();
     assertEquals("<h1>Hintergrund</h1>\n<p>Hintergrund Looks: 2 Scripts: 2 Sounds: 0</p>\n", result);
 }

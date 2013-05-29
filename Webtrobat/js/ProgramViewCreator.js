@@ -19,28 +19,27 @@
 function ProgramViewCreator(programObject)
 {
     this.program = programObject;
+    this.objectList = this.program.getObjectList();
 }
 
 ProgramViewCreator.prototype.createView = function()
 {
-    var objectList = this.program.getObjectList();
-    
-    var html = this.createBackgroundView(objectList);
+    var html = this.createBackgroundView();
     
     return html;
 }
 
-ProgramViewCreator.prototype.createBackgroundView = function(objectListObject)
+ProgramViewCreator.prototype.createBackgroundView = function()
 {
     var result = this.createBackgroundHeader();
-    result += this.createObjectButton(this.getBackground(objectListObject));
+    result += this.createObjectButton(this.getBackground());
     
     return result;
 }
 
-ProgramViewCreator.prototype.getBackground = function(objectListObject)
+ProgramViewCreator.prototype.getBackground = function()
 {
-    return objectListObject.getObjects()[0];
+    return this.objectList.getObjects()[0];
 }
 
 ProgramViewCreator.prototype.createBackgroundHeader = function()
