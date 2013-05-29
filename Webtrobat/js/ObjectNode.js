@@ -34,15 +34,23 @@ ObjectNode.prototype.getDisplayName = function()
 ObjectNode.prototype.retrieveNumberOfElement = function(dom_element, elementName)
 {
 	var elementList = dom_element.getChildElement(elementName);
-	var elements = elementList.getChildElements();
-	return elements.length;
+	if (elementList)
+	{
+		var elements = elementList.getChildElements();
+		return elements.length;
+	}
+	
+	return 0;
 }
 
 ObjectNode.prototype.load = function(dom_element)
 {
 	var nameNode = new NameNode();
-	Utils.loadChild(nameNode, dom_element);
-	this.displayName = nameNode.getText();
+	if (nameNode)
+	{
+		Utils.loadChild(nameNode, dom_element);
+		this.displayName = nameNode.getText();
+	}
 	
 	Utils.loadChild(this.lookList, dom_element);
 	

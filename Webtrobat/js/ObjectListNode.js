@@ -16,41 +16,19 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function Utils()
+function ObjectListNode()
 {
+	this.list = [];
 }
 
-Utils.getRootElement = function(xml_string)
+ObjectListNode.prototype = new BaseNode("objectList");
+
+ObjectListNode.prototype.load = function(dom_element)
 {
-	var parser = new marknote.Parser();
-	var doc = parser.parse(xml_string);
-	
-	return doc.getRootElement();
+	this.list = Utils.loadChildrenList(ObjectNode, dom_element);
 }
 
-Utils.loadChild = function(node, dom_element)
+ObjectListNode.prototype.getLength = function()
 {
-	var child = dom_element.getChildElement(node.name);
-	if (child)
-	{
-		node.load(child);
-	}
-}
-
-Utils.loadChildrenList = function(Type, dom_element)
-{
-	var list = [];
-	
-	var children = dom_element.getChildElements((new Type()).name);
-	if (children)
-	{
-		for (var i = 0; i < children.length; i++)
-		{
-			var lookNode = new Type();
-			lookNode.load(children[i]);
-			list.push(lookNode);
-		}
-	}
-	
-	return list;
+	return this.list.length;
 }

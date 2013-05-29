@@ -16,41 +16,26 @@
 //    along with Webtrobat.  If not, see <http://www.gnu.org/licenses/>.
 //////////////////////////////////////////////////////////////////////////
 
-function Utils()
+ObjectListNodeTest = TestCase("ObjectListNodeTest");
+
+ObjectListNodeTest.prototype.testObjectListNode = function()
 {
+    var attr = new ObjectListNode();
+    assertEquals("objectList", attr.name);
 }
 
-Utils.getRootElement = function(xml_string)
+ObjectListNodeTest.prototype.testLoad = function()
 {
-	var parser = new marknote.Parser();
-	var doc = parser.parse(xml_string);
-	
-	return doc.getRootElement();
-}
+    var xml_string =
+"      <objectList>\
+        <object/>\
+        <object/>\
+        <object/>\
+      </objectList>";
+    
+    var objectList = new ObjectListNode();
 
-Utils.loadChild = function(node, dom_element)
-{
-	var child = dom_element.getChildElement(node.name);
-	if (child)
-	{
-		node.load(child);
-	}
-}
-
-Utils.loadChildrenList = function(Type, dom_element)
-{
-	var list = [];
-	
-	var children = dom_element.getChildElements((new Type()).name);
-	if (children)
-	{
-		for (var i = 0; i < children.length; i++)
-		{
-			var lookNode = new Type();
-			lookNode.load(children[i]);
-			list.push(lookNode);
-		}
-	}
-	
-	return list;
+    objectList.load(Utils.getRootElement(xml_string));
+    
+    assertEquals(3, objectList.getLength());
 }
