@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Einstellungen</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Extra Codiqa features -->
+    <link rel="stylesheet" href="codiqa.ext.css">
+
+    <!-- jQuery and jQuery Mobile -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.3.1.min.js"></script>
+
+    <!-- Extra Codiqa features -->
+    <script src="js/codiqa.ext.js"></script>
+
+  </head>
+  <body>
+    <!-- Home -->
+    <div data-role="page" id="preferences">
+      <div data-theme="a" data-role="header">
+
+        <a id="button_back" data-role="button" data-transition="flip" href="index.html" class="ui-btn-left"> Back </a>
+
+        <h3> Einsellungen </h3>
+      </div>
+      <div data-role="content">
+        <div id="preferences_allow_lms_control" data-role="fieldcontain">
+          <fieldset data-role="controlgroup" data-type="vertical">
+            <legend>
+              Lego Mindstorm Bausteine
+            </legend>
+            <input id="preferences_checkbox_allow_lms_control" name="" type="checkbox">
+            <label for="preferences_checkbox_allow_lms_control"> Erlaube Steuerung eines Lego Mindstorm Roboters </label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div data-role="content">
+        <a id="preferences_button_ok" data-role="button" data-transition="flip" href="index.html"> OK </a>
+      </div>
+
+    </div>
+  </body>
+</html>
