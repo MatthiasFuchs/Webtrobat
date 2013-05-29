@@ -7,10 +7,17 @@
 .object_details h4
 {
     margin: 0;
+    padding-left: 0.7em;
 }
 
 .object_details ul
 {
-    margin-top: 0.5em;
-    margin-bottom: 0;
+    margin: 0;
+    padding-left: 1em;
+}
+
+.object_details .ui-block-a
+{
+    /*padding-left: 0.5em;*/
+   border: 1px solid red;
 }
