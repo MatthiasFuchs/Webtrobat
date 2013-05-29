@@ -1,1 +1,16 @@
 /* Put your custom CSS here */
+.object_details li
+{
+    list-style-type: none;
+}
+
+.object_details h4
+{
+    margin: 0;
+}
+
+.object_details ul
+{
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
