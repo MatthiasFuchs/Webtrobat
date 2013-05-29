@@ -32,3 +32,8 @@ ObjectListNode.prototype.getLength = function()
 {
     return this.list.length;
 }
+
+ObjectListNode.prototype.getObjects = function()
+{
+    return this.list;
+}
