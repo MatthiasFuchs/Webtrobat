@@ -22,6 +22,7 @@ HeaderNodeTest.prototype.testHeaderNode = function()
 {
     var headerNode = new HeaderNode();
     assertEquals("header", headerNode.name);
+    assertEquals("", headerNode.applicationBuildName);
 }
 
 HeaderNodeTest.prototype.testLoad = function()
