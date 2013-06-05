@@ -18,6 +18,13 @@
 
 ProgramViewCreatorTest = TestCase("ProgramViewCreatorTest");
 
+function containsData(string, displayName, numScripts, numLooks, numSounds)
+{
+    var rx = new RegExp(displayName + ".*" + "Skripte: <span>" + numScripts + ".*Aussehen: <span>" +
+                        numLooks + ".*Bausteine: <span>0.*Kl&auml;nge: <span>" + numSounds);
+    return rx.test(string);
+}
+
 ProgramViewCreatorTest.prototype.testCreateBackgroundView = function()
 {
     var xml_string =
@@ -169,10 +176,7 @@ ProgramViewCreatorTest.prototype.testCreateBackgroundView = function()
     
     var viewCreator = new ProgramViewCreator(programNode);
     var result = viewCreator.createView();
-    var backgroundView = "<h1>Hintergrund</h1>\n<p>Hintergrund Looks: 2 Scripts: 2 Sounds: 0</p>\n";
-    var objectsView =
-"<h1>Objekete</h1>\n\
-<p>Catroid Looks: 3 Scripts: 2 Sounds: 0</p>\n\
-<p>ko Looks: 0 Scripts: 0 Sounds: 0</p>\n";
-    assertEquals(backgroundView + objectsView, result);
+    assertTrue(containsData(result, "Hintergrund", 2, 2, 0));
+    assertTrue(containsData(result, "Catroid", 2, 3, 0));
+    assertTrue(containsData(result, "ko", 0, 0, 0));
 }

@@ -5,15 +5,21 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Webtrobat</title>
+    <title></title>
     <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Extra Codiqa features -->
     <link rel="stylesheet" href="codiqa.ext.css">
 
-<script src="js/jquery.js"></script>
-<script src="js/jquery.mobile-1.3.1.min.js"></script>
-<script src="js/all.js"></script>
+    <!-- jQuery and jQuery Mobile -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.3.1.min.js"></script>
+
+    <!-- Extra Codiqa features -->
+    <script src="js/codiqa.ext.js"></script>
+    
+    <script src="js/all.js"></script>
 
 <script>
     var xml_string =
@@ -165,10 +171,11 @@
     programNode.load(rootElem);
     var viewCreator = new ProgramViewCreator(programNode);
     var result = viewCreator.createView();
-    alert(result);
+
 
 
 $(document).ready(function(){
+    $('div.wuba').html(result);
   $("p").click(function(){
     $(this).html(result);
   });
@@ -176,8 +183,12 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+    <div data-role="page" id="continue">
+    <div data-role="content" class="wuba">
 <p>If you click on me, I will disappear.</p>
 <p>Click me away!</p>
 <p>Click me too!</p>
+</div>
+</div>
 </body>
 </html>

@@ -622,12 +622,35 @@ ProgramViewCreator.prototype.createBackgroundHeader = function()
 
 ProgramViewCreator.prototype.createObjectButton = function(object)
 {
-    return "<p>" +
-           object.getDisplayName() +
-           " Looks: " + object.getNumberOfLooks() +
-           " Scripts: " + object.getNumberOfScripts() +
-           " Sounds: " + object.getNumberOfSounds() +
-           "</p>\n";
+    return "<div data-role=\"collapsible-set\">\
+          <div data-role=\"collapsible\" data-collapsed=\"false\">\
+            <h3> " + object.getDisplayName() + " </h3>\
+            <div class=\"object_details\">\
+              <div class=\"ui-grid-a\">\
+                <div class=\"ui-block-a\">\
+                  <ul>\
+                    <li>\
+                      Skripte: <span>" + object.getNumberOfScripts() + "</span>\
+                    </li>\
+                    <li>\
+                      Aussehen: <span>" + object.getNumberOfLooks() + "</span>\
+                    </li>\
+                  </ul>\
+                </div>\
+                <div class=\"ui-block-b\">\
+                  <ul>\
+                    <li>\
+                      Bausteine: <span>0</span>\
+                    </li>\
+                    <li>\
+                      Kl&auml;nge: <span>" + object.getNumberOfSounds() + "</span>\
+                    </li>\
+                  </ul>\
+                </div>\
+              </div>\
+            </div>\
+          </div>\
+        </div>\n";
 }
 
 ProgramViewCreator.prototype.createObjectsView = function()
