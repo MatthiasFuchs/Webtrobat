@@ -622,8 +622,7 @@ ProgramViewCreator.prototype.createBackgroundHeader = function()
 
 ProgramViewCreator.prototype.createObjectButton = function(object)
 {
-    return "<div data-role=\"collapsible-set\">\
-          <div data-role=\"collapsible\" data-collapsed=\"false\">\
+    return "<div data-role=\"collapsible\">\
             <h3> " + object.getDisplayName() + " </h3>\
             <div class=\"object_details\">\
               <div class=\"ui-grid-a\">\
@@ -649,8 +648,7 @@ ProgramViewCreator.prototype.createObjectButton = function(object)
                 </div>\
               </div>\
             </div>\
-          </div>\
-        </div>\n";
+          </div>\n";
 }
 
 ProgramViewCreator.prototype.createObjectsView = function()
