@@ -1,4 +1,8 @@
 marknote.js
+inflate.js
+zip.js
+CompressedFile.js
+ZipReader.js
 Utils.js
 _BaseNode.js
 _TextNode.js
