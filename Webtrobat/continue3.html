@@ -19,10 +19,12 @@
     <!-- Extra Codiqa features -->
     <script src="js/codiqa.ext.js"></script>
     <script src="js/all.js"></script>
+    <script src="js/Utils.js"></script>
+    
     <script>
     
     var xml_string = "loading ..."; 
-    Utils.getRemoteContent("http://webtrobat.site90.com/projects/project3.xml", function(result) {
+    Utils.getRemoteContent("http://webtrobat.site90.com/projects/project3.xml", function(result, url) {
         xml_string = result;
 
         var programNode = new ProgramNode();
@@ -39,14 +41,13 @@
         
     })
 
-
 $(document).ready(function(){
     if (xml_string == "loading ...")
     {
         $("#continue_current_project").html(xml_string);
         $("div:jqmData(role=content)").html("<h1>loading ...</h1>");
         //$("div:jqmData(role=content)").append(html_result);
-        //$('div[data-role=collapsible]').collapsible({refresh:true});*/
+        //$('div[data-role=collapsible]').collapsible({refresh:true});
     }
 });
 </script>

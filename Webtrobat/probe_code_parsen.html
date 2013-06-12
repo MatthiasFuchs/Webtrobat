@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Click the button to locate where in the string a specifed value occurs.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction()
+{
+//var str="var newest = ProjectObject('{\"layout\":1,\"container\":\"#newestProjects\",\"loader\":\"#newestProjectsLoader\",\"buttons\":{\"prev\":null,\"next\":\"#newestShowMore\"},\"content\":[{\"CatrobatInformation\":{\"BaseUrl\":\"https:\\/\\/pocketcode.org\\/\",\"TotalProjects\":114,\"ProjectsExtension\":\".catrobat\"},\"CatrobatProjects\":[{\"ProjectId\":\"853\",\"ProjectName\":\"Quick Test\",\"ProjectNameShort\":\"Quick Te\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/853_small.png\",\"UploadedString\":\"vor 2 Stunden\"},{\"ProjectId\":\"711\",\"ProjectName\":\"Janken!\",\"ProjectNameShort\":\"Janken!\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/711_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"710\",\"ProjectName\":\"Rock paper scissors\",\"ProjectNameShort\":\"Rock pap\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/710_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"824\",\"ProjectName\":\"Pythagorean Theorem\",\"ProjectNameShort\":\"Pythagor\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/824_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"828\",\"ProjectName\":\"Word balloon demo\",\"ProjectNameShort\":\"Word bal\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/828_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"825\",\"ProjectName\":\"Compass 0.1\",\"ProjectNameShort\":\"Compass \\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/825_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"826\",\"ProjectName\":\"Infinite moving floor\",\"ProjectNameShort\":\"Infinite\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/826_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"827\",\"ProjectName\":\"Airplane with shadow\",\"ProjectNameShort\":\"Airplane\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/827_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"718\",\"ProjectName\":\"Bubble Level\",\"ProjectNameShort\":\"Bubble L\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/718_small.png\",\"UploadedString\":\"vor 3 Stunden\"}]},{\"CatrobatInformation\":{\"BaseUrl\":\"https:\\/\\/pocketcode.org\\/\",\"TotalProjects\":114,\"ProjectsExtension\":\".catrobat\"},\"CatrobatProjects\":[{\"ProjectId\":\"732\",\"ProjectName\":\"SimonSays\",\"ProjectNameShort\":\"SimonSays\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/732_small.png\",\"UploadedString\":\"vor 18 Stunden\"},{\"ProjectId\":\"817\",\"ProjectName\":\"Tic-Tac-Toe Master\",\"ProjectNameShort\":\"Tic-Tac-\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/817_small.png\",\"UploadedString\":\"vor 22 Stunden\"},{\"ProjectId\":\"848\",\"ProjectName\":\"Shooting airplane\",\"ProjectNameShort\":\"Shooting\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/848_small.png\",\"UploadedString\":\"vor 1 Tag\"},{\"ProjectId\":\"847\",\"ProjectName\":\"test\",\"ProjectNameShort\":\"test\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/thumbnail_small.png\",\"UploadedString\":\"vor 1 Tag\"},{\"ProjectId\":\"740\",\"ProjectName\":\"Crazy Cat\",\"ProjectNameShort\":\"Crazy Cat\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/740_small.png\",\"UploadedString\":\"vor 3 Tagen\"},{\"ProjectId\":\"719\",\"ProjectName\":\"Galaxy War\",\"ProjectNameShort\":\"Galaxy W\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/719_small.png\",\"UploadedString\":\"vor 6 Tagen\"},{\"ProjectId\":\"838\",\"ProjectName\":\"Sensor test Project\",\"ProjectNameShort\":\"Sensor t\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/838_small.png\",\"UploadedString\":\"vor 22 Tagen\"},{\"ProjectId\":\"836\",\"ProjectName\":\"upload test\",\"ProjectNameShort\":\"upload t\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/836_small.png\",\"UploadedString\":\"vor 22 Tagen\"},{\"ProjectId\":\"835\",\"ProjectName\":\"Blinken\",\"ProjectNameShort\":\"Blinken\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/835_small.png\",\"UploadedString\":\"vor 1 Monat\"}]}],\"numProjects\":114,\"page\":{\"number\":2,\"numProjectsPerPage\":9,\"pageNrMax\":13},\"mask\":\"listAge\",\"sort\":\"age\",\"filter\":{\"query\":\"\",\"author\":\"\"},\"config\":{\"LAYOUT_GRID_ROW\":1,\"sortby\":{\"age\":\"age\",\"downloads\":\"downloads\",\"views\":\"views\",\"random\":\"random\"}}}', {'history' : $.proxy(index.saveHistoryState, index) });";
+
+var str=":[{\"ProjectId\":\"853\",\"ProjectName\":\"Quick Test\",\"ProjectNameShort\":\"Quick Te\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/853_small.png\",\"UploadedString\":\"vor 2 Stunden\"},{\"ProjectId\":\"711\",\"ProjectName\":\"Janken!\",\"ProjectNameShort\":\"Janken!\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/711_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"710\",\"ProjectName\":\"Rock paper scissors\",\"ProjectNameShort\":\"Rock pap\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/710_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"824\",\"ProjectName\":\"Pythagorean Theorem\",\"ProjectNameShort\":\"Pythagor\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/824_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"828\",\"ProjectName\":\"Word balloon demo\",\"ProjectNameShort\":\"Word bal\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/828_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"825\",\"ProjectName\":\"Compass 0.1\",\"ProjectNameShort\":\"Compass \\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/825_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"826\",\"ProjectName\":\"Infinite moving floor\",\"ProjectNameShort\":\"Infinite\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/826_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"827\",\"ProjectName\":\"Airplane with shadow\",\"ProjectNameShort\":\"Airplane\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/827_small.png\",\"UploadedString\":\"vor 3 Stunden\"},{\"ProjectId\":\"718\",\"ProjectName\":\"Bubble Level\",\"ProjectNameShort\":\"Bubble L\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/718_small.png\",\"UploadedString\":\"vor 3 Stunden\"}]},{\"CatrobatInformation\":{\"BaseUrl\":\"https:\\/\\/pocketcode.org\\/\",\"TotalProjects\":114,\"ProjectsExtension\":\".catrobat\"},\"CatrobatProjects\":[{\"ProjectId\":\"732\",\"ProjectName\":\"SimonSays\",\"ProjectNameShort\":\"SimonSays\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/732_small.png\",\"UploadedString\":\"vor 18 Stunden\"},{\"ProjectId\":\"817\",\"ProjectName\":\"Tic-Tac-Toe Master\",\"ProjectNameShort\":\"Tic-Tac-\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/817_small.png\",\"UploadedString\":\"vor 22 Stunden\"},{\"ProjectId\":\"848\",\"ProjectName\":\"Shooting airplane\",\"ProjectNameShort\":\"Shooting\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/848_small.png\",\"UploadedString\":\"vor 1 Tag\"},{\"ProjectId\":\"847\",\"ProjectName\":\"test\",\"ProjectNameShort\":\"test\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/thumbnail_small.png\",\"UploadedString\":\"vor 1 Tag\"},{\"ProjectId\":\"740\",\"ProjectName\":\"Crazy Cat\",\"ProjectNameShort\":\"Crazy Cat\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/740_small.png\",\"UploadedString\":\"vor 3 Tagen\"},{\"ProjectId\":\"719\",\"ProjectName\":\"Galaxy War\",\"ProjectNameShort\":\"Galaxy W\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/719_small.png\",\"UploadedString\":\"vor 6 Tagen\"},{\"ProjectId\":\"838\",\"ProjectName\":\"Sensor test Project\",\"ProjectNameShort\":\"Sensor t\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/838_small.png\",\"UploadedString\":\"vor 22 Tagen\"},{\"ProjectId\":\"836\",\"ProjectName\":\"upload test\",\"ProjectNameShort\":\"upload t\\u2026\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/836_small.png\",\"UploadedString\":\"vor 22 Tagen\"},{\"ProjectId\":\"835\",\"ProjectName\":\"Blinken\",\"ProjectNameShort\":\"Blinken\",\"ScreenshotSmall\":\"resources\\/thumbnails\\/835_small.png\",\"UploadedString\":\"vor 1 Monat\"}]}],\"numProjects\":114,\"page\":{\"number\":2,\"numProjectsPerPage\":9,\"pageNrMax\":13},\"mask\":\"listAge\",\"sort\":\"age\",\"filter\":{\"query\":\"\",\"author\":\"\"},\"config\":{\"LAYOUT_GRID_ROW\":1,\"sortby\":{\"age\":\"age\",\"downloads\":\"downloads\",\"views\":\"views\",\"random\":\"random\"}}}', {'history' : $.proxy(index.saveHistoryState, index) });";
+
+var begin = 0;
+var end = 0;
+var find_before_string = "ProjectId\":\"";
+var find_after_string = "\",\"ProjectName\":\"";
+var find_project_name = "\",\"ProjectNameShort\"";
+var arr = new Array();
+var index = 0;
+var n;
+var number;
+
+
+while(begin != -1 && end != -1)
+{
+	// ProjectId
+	begin = str.indexOf(find_before_string, end);
+	if(begin == -1)
+	{
+		break;
+	}
+
+
+	
+	end = str.indexOf(find_after_string, begin);
+
+	n = find_before_string.length + begin;
+
+	number = str.substr(n, end - n);
+
+	arr.push(number);
+
+
+	//ProjectName
+	// begin of the project name
+	n = end + find_after_string.length;
+
+	// end of the project name
+	end = str.indexOf(find_project_name, n);
+
+	number = str.substr(n, end - n);
+	arr.push(number);
+}
+
+
+
+alert(arr);
+document.getElementById("demo").innerHTML=n + " " + end + " " + number;
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
