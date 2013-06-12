@@ -55,6 +55,7 @@ $(document).on('pagebeforeshow', '#continue', function(){
 
 $(document).on('pageinit', '#programs', function(){
     Utils.getProjectURIs("http://webtrobat.site90.com/projects/", function(list){
+        $("#programs div:jqmData(role=content)").html("");
         for (var i = 0; i < list.length; i++)
         { 
           Utils.getRemoteContent(list[i], function(xml_string, url){
@@ -75,4 +76,11 @@ $(document).on('pageinit', '#programs', function(){
         });
         }   
     });      
+  });
+
+$(document).on('pagebeforeshow', '#programs', function(){
+    if (xml_string == "loading ...")
+    {
+      $("#programs div:jqmData(role=content)").html("<h1>loading ...</h1>");
+    }
   });
