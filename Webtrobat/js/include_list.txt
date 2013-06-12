@@ -1,6 +1,7 @@
 marknote.js
 inflate.js
 zip.js
+parse_website.js
 Database.js
 CompressedFile.js
 ZipReader.js
