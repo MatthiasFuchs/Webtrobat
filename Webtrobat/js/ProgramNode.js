@@ -20,6 +20,7 @@ function ProgramNode()
 {
     this.header = new HeaderNode();
     this.objectList = new ObjectListNode();
+    this.url = "";
 }
 
 ProgramNode.prototype = new BaseNode("program");
