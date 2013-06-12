@@ -167,19 +167,17 @@
     var programNode = new ProgramNode();
     var rootElem = Utils.getRootElement(xml_string);
     programNode.load(rootElem);
+    var headerNode = programNode.getHeader();
+    var projectName = headerNode.programName;
     var viewCreator = new ProgramViewCreator(programNode);
     var result = viewCreator.createView();
 
 
 
 $(document).ready(function(){
-//     $('div.wuba').html(result);
+    $("#continue_current_project").append(projectName);
     $("div:jqmData(role=content)").append(result);
     $('div[data-role=collapsible]').collapsible({refresh:true});
-//     window.location.reload();
-//   $("p").click(function(){
-//     $(this).html(result);
-//   });
 });
 </script>
 
@@ -190,7 +188,7 @@ $(document).ready(function(){
       <div data-theme="a" data-role="header">
         <a id="button_back" data-role="button" data-transition="flip" href="index.html" class="ui-btn-left"> Back </a>
 
-        <h3 id="continue_current_project"> Projektname </h3>
+        <h3 id="continue_current_project"></h3>
         <div data-theme="a" data-role="footer" data-position="fixed">
           <span class="ui-title"> </span>
         </div>
