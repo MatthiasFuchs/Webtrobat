@@ -20,7 +20,7 @@ GetProjectsAsyncTest = AsyncTestCase('GetProjectsAsyncTest');
 
 GetProjectsAsyncTest.prototype.testRequest = function(queue) {
     //create our callback function
-    var callbackResponse = "test"
+    var callbackResponse;
     
     callbackFunction = function(response) {
         callbackResponse = response;
@@ -32,11 +32,14 @@ GetProjectsAsyncTest.prototype.testRequest = function(queue) {
         var callbackWrapper = callbacks.add(callbackFunction);
 
         // pass wrapped callback to the function under test
-        Utils.getProjects("http://webtrobat.site90.com/projects/", callbackWrapper);
+        Utils.getProjectURIs("http://webtrobat.site90.com/projects/", callbackWrapper);
     });
 
     // check whether callback function has been called
     queue.call('Step 2: assert callback', function() {
-        assertEquals("", callbackResponse);
+        assertEquals("http://webtrobat.site90.com/projects/project1.xml", callbackResponse[0]);
+        assertEquals("http://webtrobat.site90.com/projects/project2.xml", callbackResponse[1]);
+        assertEquals("http://webtrobat.site90.com/projects/project3.xml", callbackResponse[2]);
+        assertEquals("http://webtrobat.site90.com/projects/project4.xml", callbackResponse[3]);
     });
 };
