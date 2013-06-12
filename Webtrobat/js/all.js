@@ -3187,33 +3187,19 @@ Utils.getRemoteContent = function(url, callback) {
     xhr.send();
 }
 
-Utils.getProjects = function(url, callback) {
-    var tmp = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">" +
-"<html>"+
- "<head>"+
-  "<title>Index of /projects</title>"+
- "</head>"+
- "<body>"+
-"<h1>Index of /projects</h1>"+
-"<ul><li><a href="/"> Parent Directory</a></li>"+
-"<li><a href=\"project1.xml\"> project1.xml</a></li>"+
-"<li><a href=\"project2.xml\"> project2.xml</a></li>"+
-"</ul>"+
-"</body></html>";
+Utils.getProjectURIs = function(host_url, callback) {
     
-    var tmp1 = "Auf der Mauer, auf der Lauer sitzt 'ne kleine Wanze.";
-    Utils.getRemoteContent(url, function(result) {
-        alert("1");
-        var regex = new RegExp("<a href=\"[^\"]+\"> (\w*\.xml)<");
-        alert("2");
-        //var regex = /> (.*.xml)/;
-        var matches = regex.exec(tmp);
-        //while(matches = regex.exec(tmp)) {
-        //    alert(matches);
-        //}
-        alert(matches.length);
-        alert(matches);
-        callback("");
+    Utils.getRemoteContent(host_url, function(result) {
+        var patt=/href=\"(project\w*.xml)/g;
+        var list = [];
+        var i = 0;
+        
+        while(matches = patt.exec(result)) {
+            list[i] = host_url + matches[1];
+            i++;
+        }
+        
+        callback(list);
     });
 }
 ////////////////////////////////////////////////////////////////////////////
