@@ -42,10 +42,10 @@ ProgramOverViewCreator.prototype.createView = function()
         "</div>" +
         "<div class=\"ui-grid-a\">" +
           "<div class=\"ui-block-a\">" +
-            "<a id=\""+ this.program.url +"\" data-role=\"button\" href=\"continue3.html\" data-icon=\"arrow-d\"> &Ouml;ffnen </a>" +
+            "<a id=\""+ this.program.url +"\" onclick=\"saveurl('"+ this.program.url +"')\" data-role=\"button\" href=\"continue.html\" data-icon=\"arrow-d\"> &Ouml;ffnen </a>" +
           "</div>" +
           "<div class=\"ui-block-b\">" +
-            "<a id=\"programs_button_project1_delete\" data-role=\"button\" href=\"error.html\" data-icon=\"delete\"> Schlie&szlig;en </a>" +
+            "<a id=\"programs_button_project1_delete\" data-role=\"button\" href=\"error.html\" data-icon=\"delete\"> L&ouml;schen </a>" +
           "</div>" +
         "</div>" +
       "</div>" +

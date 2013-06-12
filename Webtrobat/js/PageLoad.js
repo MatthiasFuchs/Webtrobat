@@ -19,6 +19,12 @@
 var xml_string = "loading ..."; 
 var url_string = "http://webtrobat.site90.com/projects/project1.xml";
 
+function saveurl(url)
+{
+    alert("save url...");
+    url_string = url;
+}
+
 $(document).on('pageinit', '#continue', function(){
   xml_string = "loading ..."; 
   Utils.getRemoteContent(url_string, function(result, url) {
@@ -47,3 +53,27 @@ $(document).on('pagebeforeshow', '#continue', function(){
     $("#continue div:jqmData(role=content)").html("<h1>loading ...</h1>");
   }
 });
+
+$(document).on('pageinit', '#programs', function(){
+    Utils.getProjectURIs("http://webtrobat.site90.com/projects/", function(list){
+        for (var i = 0; i < list.length; i++)
+        { 
+          Utils.getRemoteContent(list[i], function(xml_string, url){
+             var programNode = new ProgramNode();
+             var rootElem = Utils.getRootElement(xml_string);
+             programNode.load(rootElem);
+             var viewCreator = new ProgramOverViewCreator(programNode, url);
+             var result = viewCreator.createView();
+             
+             $(document).ready(function()
+             {   
+                $("#programs div:jqmData(role=content)").append(result).trigger("create");
+                $('div[data-role=collapsible]').collapsible(
+                {
+                  refresh : true
+                });
+             });
+        });
+        }   
+    });      
+  });
