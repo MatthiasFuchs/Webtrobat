@@ -17,6 +17,47 @@
 
     <!-- Extra Codiqa features -->
     <script src="js/codiqa.ext.js"></script>
+    
+    <script src="js/all.js"></script>
+    <script src="js/Utils.js"></script>
+    
+    <script>
+    var xml_string = "loading ..."; 
+    
+    $(document).on('pageinit', '#continue', function(){       
+  
+        if (xml_string == "loading ...")
+        {
+
+            Utils.getRemoteContent("http://webtrobat.site90.com/projects/project1.xml", function(result, url) {
+           
+                xml_string = result;
+
+                var programNode = new ProgramNode();
+                var rootElem = Utils.getRootElement(xml_string);
+                programNode.load(rootElem);
+                
+                var headerNode = programNode.getHeader();
+                var projectName = headerNode.programName;
+                var viewCreator = new ProgramViewCreator(programNode);
+                var html_result = viewCreator.createView();
+                
+                $("#continue_current_project").html(projectName);
+                $("div:jqmData(role=content)").html(html_result);
+                $('div[data-role=collapsible]').collapsible({refresh:true});
+            });
+       }
+    });
+
+    $(document).on('pagebeforeshow', '#continue', function(){       
+        if (xml_string == "loading ...")
+        {
+            $("#continue_current_project").html(xml_string);
+            $("div:jqmData(role=content)").html("<h1>loading ...</h1>");
+        }
+    });
+
+    </script>
 
   </head>
   <body>
@@ -28,7 +69,7 @@
         <h3><img align=left style="width: 21px; height: 21px" src="images/icon-128.png"> Webtrobat </h3>
       </div>
       <div data-role="content">
-        <a id="index_button_continue" data-role="button" data-transition="flip" href="continue3.html" data-icon="edit" data-iconpos="left"> Fortsetzen </a>
+        <a id="index_button_continue" data-role="button" data-transition="flip" href="continue.html" data-icon="edit" data-iconpos="left"> Fortsetzen </a>
         <a id="index_button_new" data-role="button" href="error.html" data-icon="plus" data-iconpos="left"> Neu </a>
         <a id="index_button_programs" data-role="button" data-transition="flip" href="programs.html" data-icon="bars"
         data-iconpos="left"> Programme </a>
