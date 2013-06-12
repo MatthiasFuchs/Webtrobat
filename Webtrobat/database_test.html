@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script src="js/Database.js">
+</script>
+<script>
+
+</script>
+<script>
+
+gotProjectId = function(projectId)
+{
+    console.log("Got project id " + projectId);
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode(projectId);
+    node.appendChild(textnode);
+    document.getElementById("myList").appendChild(node);
+}
+ 
+request.onsuccess = function(event)
+{
+    console.log("Success creating/accessing IndexedDB database");
+    db = request.result;
+    
+    db.onerror = function(event)
+    {
+        console.log("Error creating/accessing IndexedDB database");
+    };
+
+    setRecentProjectId("Today is " + new Date());
+    getRecentProjectId(gotProjectId);
+}
+
+</script>
+</head>
+
+<body>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<ol id="myList">
+<li>List item 1</li>
+<li>List item 2</li>
+<li>List item 3</li>
+</ol>
+<button id="btn1">Append text</button>
+<button id="btn2">Append list items</button>
+</body>
+</html>
+
