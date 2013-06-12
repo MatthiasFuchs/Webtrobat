@@ -3168,7 +3168,7 @@ Utils.getRemoteContent = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'text';
-    xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2005 00:00:00 GMT");
+    //xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2005 00:00:00 GMT");
     
     /*
     xhr.onload = function() {
