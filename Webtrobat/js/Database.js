@@ -25,7 +25,7 @@ createObjectStore = function (dataBase)
  
 setRecentProjectId = function(projectId)
 {
-    console.log("Putting elephants in IndexedDB");
+    console.log("Putting projectId in IndexedDB");
     
     // Open a transaction to the database
     var transaction = db.transaction([dbRecent], "readwrite");
