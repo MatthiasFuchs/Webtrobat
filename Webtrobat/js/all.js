@@ -3044,133 +3044,6 @@ function parseWebsite(url)
 allert(arr);
 }
 
-
-// IndexedDB
-var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB;
-IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction;
-dbVersion = 14;
-dbRecent = "recent";
-dbProjects = "projects";
- 
-// Create/open database
-var request = indexedDB.open("elephantFiles", dbVersion);
-db = null;
-
-createObjectStoreRecent = function(dataBase)
-{
-    try
-    {
-        dataBase.deleteObjectStore(dbRecent);
-    }
-    catch(e)
-    {
-    }
-    dataBase.createObjectStore(dbRecent);
-}
-
-createObjectStoreProjects = function(dataBase)
-{
-    try
-    {
-        dataBase.deleteObjectStore(dbProjects);
-    }
-    catch(e)
-    {
-    }
-    var objectStore = dataBase.createObjectStore(dbProjects, { keyPath: "id" });
-    objectStore.createIndex("name", "name", { unique: false });
-    objectStore.createIndex("script", "script", { unique: false });
-}
-
-createObjectStore = function(dataBase)
-{
-    // Create an objectStore
-    console.log("Creating objectStore");
-    
-    createObjectStoreRecent(dataBase);
-    createObjectStoreProjects(dataBase);
-
-};
-
-setRecentProjectId = function(projectId)
-{
-    console.log("Putting projectId in IndexedDB");
-    
-    // Open a transaction to the database
-    var transaction = db.transaction([dbRecent], "readwrite");
-    
-    // Put the blob into the dabase
-    var put = transaction.objectStore(dbRecent).put(projectId, dbRecent);
-};
-
-getRecentProjectId = function(callback)
-{
-    var transaction = db.transaction([dbRecent]);
-    
-    var objectStore = transaction.objectStore(dbRecent);
-    objectStore.get(dbRecent).onsuccess = function (event)
-    {
-        callback(event.target.result);
-    }
-};
-
-
-putProject = function(project)
-{
-    console.log("Putting project in IndexedDB");
-    
-    // Open a transaction to the database
-    var transaction = db.transaction([dbProjects], "readwrite");
-    
-    // Put the blob into the dabase
-    var put = transaction.objectStore(dbProjects).put(project);
-};
-
-getProject = function(id, callback)
-{
-    var transaction = db.transaction([dbProjects]);
-    
-    var objectStore = transaction.objectStore(dbProjects);
-    objectStore.get(id).onsuccess = function (event)
-    {
-        var value = event.target.result;
-        callback({id: value.id, name: value.name, script: value.script});
-    }
-}
-
-getAllProjects = function(callback)
-{
-    var transaction = db.transaction([dbProjects]);
-    var objectStore = transaction.objectStore(dbProjects);
-    var result = [];
-    
-    objectStore.openCursor().onsuccess = function(event)
-    {
-        var cursor = event.target.result;
-        if (cursor)
-        {
-            var value = cursor.value;
-            result.push({id: value.id, name: value.name, script: value.script});
-            cursor.continue();
-        }
-        else
-        {
-            callback(result);
-        }
-    };
-}
-
-request.onerror = function(event)
-{
-    console.log("Error creating/accessing IndexedDB database");
-};
-
-// For future use. Currently only in latest Firefox versions
-request.onupgradeneeded = function (event)
-{
-    createObjectStore(event.target.result);
-};
-
 ////////////////////////////////////////////////////////////////////////////
 //    Copyright Webtrobat Team 2013
 //    This file is part of Webtrobat.
@@ -3333,7 +3206,7 @@ Utils.loadChildrenList = function(Type, dom_element)
 }
 
 Utils.getRemoteContent = function(url, callback) {
-    
+    alert("remoteContent");
     window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
     
     function onError(e) {
@@ -4004,10 +3877,10 @@ ProgramOverViewCreator.prototype.createView = function()
         "</div>" +
         "<div class=\"ui-grid-a\">" +
           "<div class=\"ui-block-a\">" +
-            "<a id=\""+ this.program.url +"\" data-role=\"button\" href=\"continue3.html\" data-icon=\"arrow-d\"> &Ouml;ffnen </a>" +
+            "<a id=\""+ this.program.url +"\" onclick=\"saveurl('"+ this.program.url +"')\" data-role=\"button\" href=\"continue.html\" data-icon=\"arrow-d\"> &Ouml;ffnen </a>" +
           "</div>" +
           "<div class=\"ui-block-b\">" +
-            "<a id=\"programs_button_project1_delete\" data-role=\"button\" href=\"error.html\" data-icon=\"delete\"> Schlie&szlig;en </a>" +
+            "<a id=\"programs_button_project1_delete\" data-role=\"button\" href=\"error.html\" data-icon=\"delete\"> L&ouml;schen </a>" +
           "</div>" +
         "</div>" +
       "</div>" +

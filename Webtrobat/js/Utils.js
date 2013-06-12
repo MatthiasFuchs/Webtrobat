@@ -56,7 +56,6 @@ Utils.loadChildrenList = function(Type, dom_element)
 }
 
 Utils.getRemoteContent = function(url, callback) {
-    
     window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
     
     function onError(e) {

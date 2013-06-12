@@ -21,7 +21,6 @@ var url_string = "http://webtrobat.site90.com/projects/project1.xml";
 
 function saveurl(url)
 {
-    alert("save url...");
     url_string = url;
 }
 
