@@ -2996,7 +2996,7 @@ marknote=function(){};marknote.constants={DOCTYPE_START:"<!DOCTYPE",CDATA_START:
 
 })(this);
 
-function parseWebsite(var url)
+function parseWebsite(url)
 {
 	var str = url;
 	var begin = 0;

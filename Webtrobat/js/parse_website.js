@@ -1,4 +1,4 @@
-function parseWebsite(var url)
+function parseWebsite(url)
 {
 	var str = url;
 	var begin = 0;
