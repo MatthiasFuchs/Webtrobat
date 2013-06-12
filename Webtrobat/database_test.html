@@ -18,6 +18,17 @@ gotProjectId = function(projectId)
     node.appendChild(textnode);
     document.getElementById("myList").appendChild(node);
 }
+
+gotAllProjects = function(projects)
+{
+    console.log("projects " + projects.length);
+}
+
+
+gotProject = function(project)
+{
+    console.log("project " + project.id);
+}
  
 request.onsuccess = function(event)
 {
@@ -30,7 +41,10 @@ request.onsuccess = function(event)
     };
 
     setRecentProjectId("Today is " + new Date());
-    getRecentProjectId(gotProjectId);
+    putProject({id: "sdf", name: "My Name", script: "a script"});
+    //getRecentProjectId(gotProjectId);
+    //getAllProjects(gotAllProjects);
+    getProject("sdf", gotProject);
 }
 
 </script>
