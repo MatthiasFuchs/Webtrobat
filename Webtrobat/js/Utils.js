@@ -66,6 +66,7 @@ Utils.getRemoteContent = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'text';
+    xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2005 00:00:00 GMT");
     
     /*
     xhr.onload = function() {
@@ -78,7 +79,7 @@ Utils.getRemoteContent = function(url, callback) {
     {
         if (xhr.readyState == 4 && xhr.status == 200)
           {
-            callback(xhr.response);
+            callback(xhr.response, url);
           }
     }
     
@@ -86,8 +87,7 @@ Utils.getRemoteContent = function(url, callback) {
 }
 
 Utils.getProjectURIs = function(host_url, callback) {
-    
-    Utils.getRemoteContent(host_url, function(result) {
+    Utils.getRemoteContent(host_url, function(result, url) {
         var patt=/href=\"(project\w*.xml)/g;
         var list = [];
         var i = 0;
