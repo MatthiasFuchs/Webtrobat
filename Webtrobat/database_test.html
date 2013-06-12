@@ -3,7 +3,7 @@
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
 </script>
-<script src="js/Database.js">
+<script src="js/all.js">
 </script>
 <script>
 
@@ -29,6 +29,45 @@ gotProject = function(project)
 {
     console.log("project " + project.id);
 }
+
+//var url = "http://www.html5rocks.com/de/tutorials/file/dndfiles/";
+var url = "https://pocketcode.org/download/854.catrobat";
+
+function downloadCallback(content)
+{
+    alert(content);
+}
+
+function zipLoaded(zipReader)
+{
+    console.log("ho ho ho");
+}
+
+function doDownload()
+{
+    // Create XHR
+    var xhr = new XMLHttpRequest(),
+    blob;
+    
+    xhr.open("GET", url, true);
+    // Set the responseType to blob
+    xhr.responseType = "blob";
+    
+    xhr.addEventListener("load", function () {
+        if (xhr.status === 200) {
+            console.log("Image retrieved");
+            // Blob as response
+            blob = xhr.response;
+            console.log("Blob:" + blob);
+            
+       //     var zipReader = new ZipReader(blob, zipLoaded);
+            
+        }
+    }, false);
+    // Send XHR
+    xhr.send();
+
+}
  
 request.onsuccess = function(event)
 {
@@ -44,8 +83,14 @@ request.onsuccess = function(event)
     putProject({id: "sdf", name: "My Name", script: "a script"});
     //getRecentProjectId(gotProjectId);
     //getAllProjects(gotAllProjects);
-    getProject("sdf", gotProject);
+    //getProject("sdf", gotProject);
+    
+    doDownload();
+    //Utils.getRemoteContentBlob(url, downloadCallback);
 }
+
+
+
 
 </script>
 </head>
