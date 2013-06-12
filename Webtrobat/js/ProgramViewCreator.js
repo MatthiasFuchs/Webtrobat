@@ -45,7 +45,7 @@ ProgramViewCreator.prototype.getBackground = function()
 
 ProgramViewCreator.prototype.createBackgroundHeader = function()
 {
-    return "<h1>Hintergrund</h1>\n";
+    return "<h3>Hintergrund</h3>\n";
 }
 
 ProgramViewCreator.prototype.createObjectButton = function(object)
@@ -93,5 +93,5 @@ ProgramViewCreator.prototype.createObjectsView = function()
 
 ProgramViewCreator.prototype.createObjectsHeader = function()
 {
-    return "<h1>Objekete</h1>\n";
+    return "<h3>Objekte</h3>\n";
 }

@@ -18,6 +18,169 @@
 
     <!-- Extra Codiqa features -->
     <script src="js/codiqa.ext.js"></script>
+    <script src="js/all.js"></script>
+    <script>
+    var xml_string =
+"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\
+    <program>\
+      <header>\
+        <applicationBuildName></applicationBuildName>\
+        <applicationBuildNumber>0</applicationBuildNumber>\
+        <applicationName>Catroid</applicationName>\
+        <applicationVersion>0.7.0beta-1501-debug</applicationVersion>\
+        <catrobatLanguageVersion>0.6</catrobatLanguageVersion>\
+        <dateTimeUpload></dateTimeUpload>\
+        <description></description>\
+        <deviceName>GT-I9300</deviceName>\
+        <mediaLicense></mediaLicense>\
+        <platform>Android</platform>\
+        <platformVersion>17</platformVersion>\
+        <programLicense></programLicense>\
+        <programName>Mein erstes Projekt</programName>\
+        <programScreenshotManuallyTaken>false</programScreenshotManuallyTaken>\
+        <remixOf></remixOf>\
+        <screenHeight>1280</screenHeight>\
+        <screenWidth>720</screenWidth>\
+        <tags></tags>\
+        <url></url>\
+        <userHandle></userHandle>\
+      </header>\
+      <objectList>\
+        <object>\
+          <lookList>\
+            <look>\
+              <fileName>22BB0986F3B0349F08136AFB037C7F4A_Hintergrund</fileName>\
+              <name>Hintergrund</name>\
+            </look>\
+            <look>\
+              <fileName>8F48181C163AECCD3464CFA5D9AA1F6F_IMG_20130417_111103.jpg</fileName>\
+              <name>IMG_20130417_111103</name>\
+            </look>\
+          </lookList>\
+          <name>Hintergrund</name>\
+          <scriptList>\
+            <startScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look[2]\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+            </startScript>\
+            <whenScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+              <action>Tapped</action>\
+            </whenScript>\
+          </scriptList>\
+          <soundList/>\
+        </object>\
+        <object>\
+          <lookList>\
+            <look>\
+              <fileName>CFD7234CABB050900E7098F070077A1A_Katze normal</fileName>\
+              <name>Katze normal</name>\
+            </look>\
+            <look>\
+              <fileName>8380419464693D8BF38323918FD9AE23_Banzai-Katze</fileName>\
+              <name>Banzai-Katze</name>\
+            </look>\
+            <look>\
+              <fileName>A680E9D62D48B0EC6A092D7A1E35769E_Grinsekatze</fileName>\
+              <name>Grinsekatze</name>\
+            </look>\
+          </lookList>\
+          <name>Catroid</name>\
+          <scriptList>\
+            <startScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+            </startScript>\
+            <whenScript>\
+              <brickList>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look[2]\"/>\
+                </setLookBrick>\
+                <waitBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <timeToWaitInSeconds>\
+                    <formulaTree>\
+                      <type>NUMBER</type>\
+                      <value>0.5</value>\
+                    </formulaTree>\
+                  </timeToWaitInSeconds>\
+                </waitBrick>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look[3]\"/>\
+                </setLookBrick>\
+                <waitBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <timeToWaitInSeconds>\
+                    <formulaTree>\
+                      <type>NUMBER</type>\
+                      <value>0.5</value>\
+                    </formulaTree>\
+                  </timeToWaitInSeconds>\
+                </waitBrick>\
+                <setLookBrick>\
+                  <object reference=\"../../../../..\"/>\
+                  <look reference=\"../../../../../lookList/look\"/>\
+                </setLookBrick>\
+              </brickList>\
+              <object reference=\"../../..\"/>\
+              <action>Tapped</action>\
+            </whenScript>\
+          </scriptList>\
+          <soundList/>\
+        </object>\
+        <object>\
+          <lookList/>\
+          <name>ko</name>\
+          <scriptList/>\
+          <soundList/>\
+        </object>\
+      </objectList>\
+      <variables>\
+        <objectVariableList>\
+          <entry>\
+            <object reference=\"../../../../objectList/object[3]\"/>\
+            <list/>\
+          </entry>\
+        </objectVariableList>\
+        <programVariableList/>\
+      </variables>\
+    </program>";
+    
+    var programNode = new ProgramNode();
+    var rootElem = Utils.getRootElement(xml_string);
+    programNode.load(rootElem);
+    var headerNode = programNode.getHeader();
+    var projectName = headerNode.programName;
+    var viewCreator = new ProgramViewCreator(programNode);
+    var result = viewCreator.createView();
+
+    
+
+
+$(document).ready(function(){
+    $("#continue_current_project").append(projectName);
+    $("div:jqmData(role=content)").append(result);
+    $('div[data-role=collapsible]').collapsible({refresh:true});
+});
+</script>
 
   </head>
   <body>
@@ -26,166 +189,16 @@
       <div data-theme="a" data-role="header">
         <a id="button_back" data-role="button" data-transition="flip" href="index.html" class="ui-btn-left"> Back </a>
 
-        <h3 id="continue_current_project"> Projektname </h3>
+        <h3 id="continue_current_project"></h3>
         <div data-theme="a" data-role="footer" data-position="fixed">
           <span class="ui-title"> </span>
         </div>
       </div>
-      <div data-role="content">
           
-        <div data-role="collapsible-set">
-          <div data-role="collapsible" data-collapsed="false">
-            <h3> Hintergrund </h3>
-            <div class="object_details">
-              <!--
-              <h4>Details</h4>
-              -->
-              <div class="ui-grid-a">
-                <div class="ui-block-a">
-                  <ul>
-                    <li>
-                      Skripte: <span>10</span>
-                    </li>
-                    <li>
-                      Aussehen: <span>2</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="ui-block-b">
-                  <ul>
-                    <li>
-                      Bausteine: <span>23</span>
-                    </li>
-                    <li>
-                      Kl&auml;nge: <span>2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <a id="continue_button_background_edit" data-role="button" href="error.html" data-icon="edit"
-            data-iconpos="top"> </a>
-          </div>
-        </div>
-        
-        <div data-role="collapsible-set">
-          <div data-role="collapsible" data-collapsed="false">
-            <h3> Objekt 1 </h3>
-            <div class="object_details">
-              <!--
-              <h4>Details</h4>
-              -->
-              <div class="ui-grid-a">
-                <div class="ui-block-a">
-                  <ul>
-                    <li>
-                      Skripte: <span>10</span>
-                    </li>
-                    <li>
-                      Aussehen: <span>2</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="ui-block-b">
-                  <ul>
-                    <li>
-                      Bausteine: <span>23</span>
-                    </li>
-                    <li>
-                      Kl&auml;nge: <span>2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="ui-grid-a">
-              <div class="ui-block-a">
-                <a id="continue_button_edit" data-role="button" href="error.html" data-icon="edit"
-                data-iconpos="top"> </a>
-              </div>
-              <div class="ui-block-b">
-                <a id="continue_button_rename" data-role="button" href="error.html" data-icon="alert"
-                data-iconpos="top"> </a>
-              </div>
-              <div class="ui-block-a">
-                <a id="continue_button_copy" data-role="button" href="error.html" data-icon="plus"
-                data-iconpos="top"> </a>
-              </div>
-              <div class="ui-block-b">
-                <a id="continue_button_delete" data-role="button" href="error.html" data-icon="delete"
-                data-iconpos="top"> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div data-role="collapsible-set">
-          <div data-role="collapsible" data-collapsed="false">
-            <h3> Objekt 2 </h3>
-            <div class="object_details">
-              <!--
-              <h4>Details</h4>
-              -->
-              <div class="ui-grid-a">
-                <div class="ui-block-a">
-                  <ul>
-                    <li>
-                      Skripte: <span>10</span>
-                    </li>
-                    <li>
-                      Aussehen: <span>2</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="ui-block-b">
-                  <ul>
-                    <li>
-                      Bausteine: <span>23</span>
-                    </li>
-                    <li>
-                      Kl&auml;nge: <span>2</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="ui-grid-a">
-              <div class="ui-block-a">
-                <a id="continue_button_edit" data-role="button" href="error.html" data-icon="edit"
-                data-iconpos="top"> </a>
-              </div>
-              <div class="ui-block-b">
-                <a id="continue_button_rename" data-role="button" href="error.html" data-icon="alert"
-                data-iconpos="top"> </a>
-              </div>
-              <div class="ui-block-a">
-                <a id="continue_button_copy" data-role="button" href="error.html" data-icon="plus"
-                data-iconpos="top"> </a>
-              </div>
-              <div class="ui-block-b">
-                <a id="continue_button_delete" data-role="button" href="error.html" data-icon="delete"
-                data-iconpos="top"> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div data-role="collapsible-set">
-          <div data-role="collapsible" data-collapsed="false"></div>
-        </div>
-      </div>
-      <div data-theme="a" data-role="footer" data-position="fixed">
-        <div class="ui-grid-a">
-          <div class="ui-block-a">
-            <a id="continue_button_addobject" data-role="button" href="error.html" data-icon="plus"
-            data-iconpos="top"> </a>
-          </div>
-          <div class="ui-block-b">
-            <a id="continue_button_play" data-role="button" href="error.html" data-icon="arrow-r"
-            data-iconpos="top"> </a>
-          </div>
-        </div>
-      </div>
+<div data-role="content">
+</div>
     </div>
   </body>
 </html>
+
+
